@@ -1,0 +1,7 @@
+#! /bin/sh
+
+echo "restoring computer dotfiles"
+stow zsh
+stow neovim
+stow i3
+echo "We are done restoring dotfiles!"
