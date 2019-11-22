@@ -130,6 +130,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+function stowrestore() {
+  ~/dotfiles/
+  ../dotfiles/stowrestore
+}
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fpath=($fpath "/home/jonpalacio/.zfunctions")
 fpath=($fpath "/home/jonpalacio/.zfunctions")
