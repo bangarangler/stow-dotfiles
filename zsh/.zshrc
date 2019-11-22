@@ -134,6 +134,22 @@ source $ZSH/oh-my-zsh.sh
 fpath=($fpath "/home/jonpalacio/.zfunctions")
 fpath=($fpath "/home/jonpalacio/.zfunctions")
 
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
   # Set Spaceship ZSH as a prompt
   autoload -U promptinit; promptinit
   prompt spaceship
+
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
