@@ -34,7 +34,7 @@ SPACESHIP_USER_PREFIX="" # remove `with` before username
 SPACESHIP_USER_SUFFIX="" # remove space before host
 
 # HOST
-# Result will look like this:
+# Result will look like this:https://manjaro.org/
 #   username@:(hostname)
 SPACESHIP_HOST_PREFIX="@:("
 SPACESHIP_HOST_SUFFIX=") "
