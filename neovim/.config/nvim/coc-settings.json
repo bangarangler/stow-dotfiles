@@ -1,0 +1,19 @@
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "html",
+    "css",
+    "javascript",
+    "javascriptreact",
+    "graphql",
+    "json",
+    "Markdown",
+    "typescript",
+    "go",
+    "jsonc",
+    "jsonb"
+  ],
+  "prettier.bracketSpacing": true,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.singleQuote": false
+}

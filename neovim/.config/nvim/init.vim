@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'honza/vim-snippets'
@@ -68,9 +68,10 @@ call plug#end()
 let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier"]
 "nnoremap <leader><leader><C-c> :CocInstall coc-python
 
-"command! -nargs=0 Prettier :CocCommand prettier.formatFile
-"vmap <leader>p <Plug>(coc-format-selected)
-"nnoremap <leader>p <Plug>(coc-format-selected)
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+vmap <leader>p <Plug>(coc-format-selected)
+nnoremap <leader>p <Plug>(coc-format-selected)
 
 let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
@@ -295,9 +296,9 @@ let g:ale_fixers = {
  \}
  let g:ale_fixers = ['prettier', 'eslint']
 " Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 1
+"let g:ale_fix_on_save = 1
 " set to 0 to disable fix files on save
-"let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 "leader key for prettier and ale
 nmap <leader>d <Plug>(ale_fix)
 set completeopt+=noinsert
