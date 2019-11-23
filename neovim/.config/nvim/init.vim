@@ -4,6 +4,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 "Plug 'scroloose/nerdcommenter'
 Plug 'ddollar/nerdcommenter'
@@ -145,7 +146,7 @@ let g:fzf_colors =
 
 let g:fzf_buffers_jump = 1
 "let g:fzf_tags_command = 'ctags -R'
-nmap <Leader>b :buffers<CR>
+nmap <Leader>b :Buffers<CR>
 nmap <Leader>n :files<CR>
 nmap <Leader>m :bufdo! bw<CR>
 
