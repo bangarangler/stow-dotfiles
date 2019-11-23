@@ -141,6 +141,8 @@ function stowrestore() {
 fpath=($fpath "/home/jonpalacio/.zfunctions")
 fpath=($fpath "/home/jonpalacio/.zfunctions")
 
+export FZF_Default_Command='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 # place this after nvm initialization!
 autoload -U add-zsh-hook
 load-nvmrc() {
