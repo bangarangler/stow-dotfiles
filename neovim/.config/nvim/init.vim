@@ -2,6 +2,7 @@
 call plug#begin()
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -127,7 +128,7 @@ set mouse=a
 set t_Co=256
 highlight Normal ctermbg=None
 
-set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+"set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 
 let g:fzf_colors =
 	\ { 'fg':      ['fg', 'Normal'],
@@ -155,6 +156,15 @@ nmap <Leader>m :bufdo! bw<CR>
 
 " set leaderf to open FZF
 nmap <Leader>f :FZF<CR>
+
+" USEFUL FOR POPULATING QUICKFIX WINDOW
+let g:ackprg = 'rg --vimgrep --no-heading'
+" EXAMPLE USAGE
+" :Ack GoalList
+" :cdo %s/GoalList/GoalLists/gc
+
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
 
 " set leader key to \
 let mapleader="\\"
