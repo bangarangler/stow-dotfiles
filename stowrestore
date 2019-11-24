@@ -4,4 +4,7 @@ echo "restoring computer dotfiles"
 stow zsh
 stow neovim
 stow i3
+stow Xresources
+stow tmux
+stow compton
 echo "We are done restoring dotfiles!"
