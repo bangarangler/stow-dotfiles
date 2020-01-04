@@ -47,4 +47,3 @@ windows:
       # synchronize: after
       panes:
         - ranger
-        - vim

@@ -17,7 +17,6 @@ Plug 'mattn/emmet-vim'
 "Plug 'scrooloose/syntastic'
 "Plug 'ervandew/supertab'
 "Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --ts-completer' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'pangloss/vim-javascript'
 Plug 'sirver/ultisnips'
@@ -27,12 +26,14 @@ Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
-Plug 'dense-analysis/ale'
+"Plug 'w0rp/ale'
+"Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'honza/vim-snippets'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
+Plug 'https://github.com/nathanchapman/vscode-javascript-snippets'
+"Plug 'mlaursen/vim-react-snippets'
 "Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
 Plug 'moll/vim-node', { 'for': 'javascript' }
@@ -62,11 +63,65 @@ Plug 'tpope/vim-abolish'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB'
 call plug#end()
 
-let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier"]
+"SNIPPETS
+"nfn const fn = (params) => {}
+"clo console.log(':',)
+"imp import moduleName from 'module'
+"imd import { destructuredModule } from 'module'
+"exp export default moduleName
+"exd export { destructuredModule } from 'module'
+"sw switch statment
+"fl basic for loop
+"dob const {propName} = objectToDestructure
+"dar const [propName] = arrayToDestructure
+"imr import React from 'react'
+"imrd import ReactDOM from 'react-dom'
+"imrc import React, { Component } from 'react'
+"imrs import React, { useState } from 'react'
+"imrse import React, { useState, useEffect } from 'react'
+"ren render() { return(  ) }
+"rfce and or rfc react functional component export
+"l= let {${1:name}} = ${2:value}
+"co= const {${1:name}} = ${2:value}
+"if if statment
+"el else statment
+"ife if else statment
+"ei else if statment
+"ter ternary operator
+"tc try catch
+"tcf try catch finally
+"af arrow function
+"afb arrow function with body
+"fe forEach loop
+"map map
+"reduce
+"filter
+"ol obj literal
+"slol same line obj literal
+"kv key/value pair
+"r return
+"rc return component
+"cb node.js style callback
+"re require
+"rel require ./ local
+"req require assignment
+"reql require local assignment
+"dreq
+"dreql
+"me module.exports
+"meo module.exports = {}
+
+
+let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react", "https://github.com/dsznajder/vscode-es7-javascript-react-snippets", "https://github.com/skyran1278/js-jsx-snippets"]
+" Plug 'https://github.com/xabikos/vscode-react'
+" Plug 'https://github.com/dsznajder/vscode-es7-javascript-react-snippets'
+" Plug 'https://github.com/skyran1278/js-jsx-snippets'
+
 "nnoremap <leader><leader><C-c> :CocInstall coc-python
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -132,7 +187,7 @@ set t_Co=256
 colorscheme dracula
 highlight Normal ctermbg=None
 
-"set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+set rtp+=/home/jonathan/.vim/plugged/
 
 let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
@@ -212,7 +267,7 @@ map <C-n> :NERDTreeToggle<CR>
 " ALE Config.  more below
 " Enable completion where available.
  " This setting must be set before ALE is loaded.
- let g:ale_completion_enabled = 1
+ " let g:ale_completion_enabled = 1
  set wildmode=longest:full,full
 
 
@@ -294,17 +349,17 @@ let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
 " In ~/.vim/vimrc, or somewhere similar.
-let g:ale_fixers = {
- \   '*': ['remove_trailing_lines', 'trim_whitespace'],
- \   'javascript': ['eslint', 'prettier'],
- \}
- let g:ale_fixers = ['prettier', 'eslint']
+" let g:ale_fixers = {
+ " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+ " \   'javascript': ['eslint', 'prettier'],
+ " \}
+ " let g:ale_fixers = ['prettier', 'eslint']
 " Set this variable to 1 to fix files when you save them.
 "let g:ale_fix_on_save = 1
 " set to 0 to disable fix files on save
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 "leader key for prettier and ale
-nmap <leader>d <Plug>(ale_fix)
+" nmap <leader>d <Plug>(ale_fix)
 set completeopt+=noinsert
 
 "searching
@@ -389,23 +444,23 @@ nnoremap <C-v> :source ~/.vimrc <cr>
 
 
 " ALE
-let g:ale_set_highlights = 0
-let g:ale_change_sign_column_color = 0
-"let g:ale_sign_column_always = 1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-let g:ale_echo_msg_error_str = '✖'
-let g:ale_echo_msg_warning_str = '⚠'
-let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-let g:ale_completion_enabled = 0
+"let g:ale_set_highlights = 0
+"let g:ale_change_sign_column_color = 0
+""let g:ale_sign_column_always = 1
+"let g:ale_sign_error = '✖'
+"let g:ale_sign_warning = '⚠'
+"let g:ale_echo_msg_error_str = '✖'
+"let g:ale_echo_msg_warning_str = '⚠'
+"let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
+"let g:ale_completion_enabled = 0
 
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fixers['json'] = ['prettier']
-let g:ale_fixers['css'] = ['prettier']
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_fix_on_save = 1
+"let g:ale_fixers = {}
+"let g:ale_fixers['javascript'] = ['prettier']
+"let g:ale_fixers['json'] = ['prettier']
+"let g:ale_fixers['css'] = ['prettier']
+"let g:ale_javascript_prettier_use_local_config = 1
+"let g:ale_fix_on_save = 1
 
 set splitbelow
 set splitright
@@ -542,4 +597,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>o
+
 
