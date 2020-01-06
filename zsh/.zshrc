@@ -140,6 +140,8 @@ alias df="tmuxinator df"
 
 alias pcstatus="tmuxinator pcstatus"
 
+alias update="sudo apt update && sudo apt upgrade"
+
 function stowrestore() {
   ~/dotfiles/
   ../dotfiles/stowrestore

@@ -29,10 +29,10 @@ Plug 'jiangmiao/auto-pairs'
 "Plug 'w0rp/ale'
 "Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'honza/vim-snippets'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
-Plug 'https://github.com/nathanchapman/vscode-javascript-snippets'
+" Plug 'honza/vim-snippets'
+" Plug 'epilande/vim-es2015-snippets'
+" Plug 'epilande/vim-react-snippets'
+" Plug 'https://github.com/nathanchapman/vscode-javascript-snippets'
 "Plug 'mlaursen/vim-react-snippets'
 "Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
@@ -118,9 +118,6 @@ call plug#end()
 
 
 let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react", "https://github.com/dsznajder/vscode-es7-javascript-react-snippets", "https://github.com/skyran1278/js-jsx-snippets"]
-" Plug 'https://github.com/xabikos/vscode-react'
-" Plug 'https://github.com/dsznajder/vscode-es7-javascript-react-snippets'
-" Plug 'https://github.com/skyran1278/js-jsx-snippets'
 
 "nnoremap <leader><leader><C-c> :CocInstall coc-python
 
