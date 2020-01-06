@@ -142,6 +142,8 @@ alias pcstatus="tmuxinator pcstatus"
 
 alias update="sudo apt update && sudo apt upgrade"
 
+alias fuck="sudo !!"
+
 function stowrestore() {
   ~/dotfiles/
   ../dotfiles/stowrestore
