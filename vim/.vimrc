@@ -254,6 +254,15 @@ set wildmode=longest:full,full
 
 set number
 
+function! LineNumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <leader>nt :call LineNumberToggle()<cr>
+
 set incsearch
 
 set hidden
