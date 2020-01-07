@@ -144,6 +144,8 @@ alias update="sudo apt update && sudo apt upgrade"
 
 alias fuck="sudo !!"
 
+alias dpcode="code && devilspie"
+
 function stowrestore() {
   ~/dotfiles/
   ../dotfiles/stowrestore
