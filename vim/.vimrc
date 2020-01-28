@@ -67,8 +67,8 @@ Plug 'nvie/vim-flake8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB'
+Plug 'ekalinin/dockerfile.vim'
 call plug#end()
-
 "SNIPPETS
 "nfn const fn = (params) => {}
 "clo console.log(':',)
