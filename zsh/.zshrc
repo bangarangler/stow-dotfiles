@@ -136,7 +136,7 @@ alias workFE="tmuxinator workFE"
 
 alias workBE="tmuxinator workBE"
 
-alias df="tmuxinator df"
+alias dfiles="tmuxinator df"
 
 alias pcstatus="tmuxinator pcstatus"
 
