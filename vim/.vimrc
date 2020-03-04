@@ -1,12 +1,15 @@
 call plug#begin()
 "Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
+Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'scroloose/nerdcommenter'
 "Plug 'ddollar/nerdcommenter'
 " Plug 'tpope/vim-commentary'
@@ -37,25 +40,25 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "Plug 'mlaursen/vim-react-snippets'
 "Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
-Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-let g:jsx_ext_required = 0
+" Plug 'moll/vim-node', { 'for': 'javascript' }
+" Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+" let g:jsx_ext_required = 0
 "Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 "Plug 'groenewege/vim-less', { 'for': 'less' }
 "Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'gko/vim-coloresque'
 "Plug 'stephenway/postcss.vim', { 'for': 'css' }
-Plug 'elzr/vim-json', { 'for': 'json'  }
-let g:vim_json_syntax_conceal = 0
+" Plug 'elzr/vim-json', { 'for': 'json'  }
+" let g:vim_json_syntax_conceal = 0
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
 Plug 'valloric/matchtagalways'
 "Plug 'joonty/vdebug'
-let g:mta_filetypes = {
-      \ 'javascript.jsx' : 1,
-      \}
+" let g:mta_filetypes = {
+"       \ 'javascript.jsx' : 1,
+"       \}
 Plug 'pablopunk/dynamic-file-completion.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'styled-components/vim-styled-components'
@@ -118,7 +121,7 @@ call plug#end()
 "meo module.exports = {}
 
 
-let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react", "https://github.com/dsznajder/vscode-es7-javascript-react-snippets", "https://github.com/skyran1278/js-jsx-snippets"]
+let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react", "https://github.com/dsznajder/vscode-es7-javascript-react-snippets", "https://github.com/skyran1278/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker"]
 
 "nnoremap <leader><leader><C-c> :CocInstall coc-python
 
@@ -214,6 +217,11 @@ nnoremap <Leader>t :Tags<CR>
 
 " set leaderf to open FZF
 nmap <Leader>f :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
 
 " USEFUL FOR POPULATING QUICKFIX WINDOW
 let g:ackprg = 'rg --vimgrep --no-heading'
@@ -229,6 +237,9 @@ let mapleader="\\"
 
 "re-map esc to jk
 inoremap jk <esc>
+
+"refresh marks if out of sync
+nnoremap <leader>sr :SignatureRefresh<CR>
 
 "emmet leader key
 let g:user_emmet_leader_key=','
@@ -277,36 +288,37 @@ map <C-n> :NERDTreeToggle<CR>
  " let g:ale_completion_enabled = 1
  set wildmode=longest:full,full
 
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
 
 " better rainbow parentheses color options
-let g:rbpt_colorpairs = [
-    \ ['darkMagenta',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'seagreen3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkblue',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['darkMagenta',       'seagreen3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkcyan',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'darkcyan'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['lightmagenta',     'DarkOrchid3'],
-    \ ['lightcyan',         'darkmagenta'],
-    \ ]
-
-
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
+" let g:rbpt_colorpairs = [
+"     \ ['darkMagenta',       'RoyalBlue3'],
+"     \ ['Darkblue',    'SeaGreen3'],
+"     \ ['darkgray',    'DarkOrchid3'],
+"     \ ['darkgreen',   'seagreen3'],
+"     \ ['darkcyan',    'RoyalBlue3'],
+"     \ ['darkblue',     'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['darkMagenta',       'seagreen3'],
+"     \ ['gray',        'RoyalBlue3'],
+"     \ ['darkcyan',       'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['Darkblue',    'darkcyan'],
+"     \ ['darkgreen',   'RoyalBlue3'],
+"     \ ['darkcyan',    'SeaGreen3'],
+"     \ ['lightmagenta',     'DarkOrchid3'],
+"     \ ['lightcyan',         'darkmagenta'],
+"     \ ]
+"
+"
+" let g:rbpt_max = 16
+" let g:rbpt_loadcmd_toggle = 0
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
+" let g:javascript_plugin_flow = 1
+" let g:jsx_ext_required = 0
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
