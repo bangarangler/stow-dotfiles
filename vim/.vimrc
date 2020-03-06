@@ -210,6 +210,7 @@ let g:fzf_buffers_jump = 1
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>n :files<CR>
 nmap <Leader>m :bufdo! bw<CR>
+nmap <Leader>ju :jumps<CR>
 nnoremap <Leader>t :Tags<CR>
 
 " OLD FOR USING YOU COMPLETE ME AND NEEDING TAGS
