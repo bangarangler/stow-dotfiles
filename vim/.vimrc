@@ -72,6 +72,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'vim-scripts/Conque-GDB'
 Plug 'ekalinin/dockerfile.vim'
 call plug#end()
+
 "SNIPPETS
 "nfn const fn = (params) => {}
 "clo console.log(':',)
@@ -241,6 +242,9 @@ inoremap jk <esc>
 
 "refresh marks if out of sync
 nnoremap <leader>sr :SignatureRefresh<CR>
+
+"map to call up jump list
+nnoremap <leader>ju :ju<CR>
 
 "emmet leader key
 let g:user_emmet_leader_key=','
@@ -442,9 +446,10 @@ set foldlevel=1
 nnoremap <space> za
 
 "  shortcut to save
- nmap <leader>w :w<cr>
+nmap <leader>w :w<cr>
+nmap <leader>wa :wa<cr>
 
- " scroll the viewport faster
+" scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
