@@ -124,6 +124,8 @@ call plug#end()
 "https://github.com/dsznajder/vscode-es7-javascript-react-snippets",
 let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1278/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript"]
 
+nnoremap <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
+
 "nnoremap <leader><leader><C-c> :CocInstall coc-python
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
