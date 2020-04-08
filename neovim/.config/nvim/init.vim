@@ -1,22 +1,26 @@
-"Plug 'junegunn/rainbow_parentheses.vim'
 call plug#begin()
-Plug 'kien/rainbow_parentheses.vim'
+"Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
+Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'scroloose/nerdcommenter'
-Plug 'ddollar/nerdcommenter'
-Plug 'kabbamine/vcoolor.vim'
+"Plug 'ddollar/nerdcommenter'
+" Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
+"Plug 'kabbamine/vcoolor.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'easymotion/vim-easymotion'
 Plug 'mattn/emmet-vim'
 "Plug 'scrooloose/syntastic'
 "Plug 'ervandew/supertab'
 "Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --ts-completer' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'pangloss/vim-javascript'
 Plug 'sirver/ultisnips'
@@ -26,46 +30,102 @@ Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
-Plug 'dense-analysis/ale'
+"Plug 'w0rp/ale'
+"Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'honza/vim-snippets'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
+" Plug 'honza/vim-snippets'
+" Plug 'epilande/vim-es2015-snippets'
+" Plug 'epilande/vim-react-snippets'
+" Plug 'https://github.com/nathanchapman/vscode-javascript-snippets'
+"Plug 'mlaursen/vim-react-snippets'
 "Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
-Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-let g:jsx_ext_required = 0
+" Plug 'moll/vim-node', { 'for': 'javascript' }
+" Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+" let g:jsx_ext_required = 0
 "Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+"Plug 'groenewege/vim-less', { 'for': 'less' }
+"Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'gko/vim-coloresque'
-Plug 'stephenway/postcss.vim', { 'for': 'css' }
-Plug 'elzr/vim-json', { 'for': 'json'  }
-let g:vim_json_syntax_conceal = 0
+"Plug 'stephenway/postcss.vim', { 'for': 'css' }
+" Plug 'elzr/vim-json', { 'for': 'json'  }
+" let g:vim_json_syntax_conceal = 0
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
 Plug 'valloric/matchtagalways'
-Plug 'joonty/vdebug'
-let g:mta_filetypes = {
-			\ 'javascript.jsx' : 1,
-			\}
+"Plug 'joonty/vdebug'
+" let g:mta_filetypes = {
+"       \ 'javascript.jsx' : 1,
+"       \}
 Plug 'pablopunk/dynamic-file-completion.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'styled-components/vim-styled-components'
 Plug 'tpope/vim-abolish'
-Plug 'jparise/vim-graphql'
+"Plug 'jparise/vim-graphql'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB'
+Plug 'ekalinin/dockerfile.vim'
 call plug#end()
 
-let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier"]
+"SNIPPETS
+"nfn const fn = (params) => {}
+"clo console.log(':',)
+"imp import moduleName from 'module'
+"imd import { destructuredModule } from 'module'
+"exp export default moduleName
+"exd export { destructuredModule } from 'module'
+"sw switch statment
+"fl basic for loop
+"dob const {propName} = objectToDestructure
+"dar const [propName] = arrayToDestructure
+"imr import React from 'react'
+"imrd import ReactDOM from 'react-dom'
+"imrc import React, { Component } from 'react'
+"imrs import React, { useState } from 'react'
+"imrse import React, { useState, useEffect } from 'react'
+"ren render() { return(  ) }
+"rfce and or rfc react functional component export
+"l= let {${1:name}} = ${2:value}
+"co= const {${1:name}} = ${2:value}
+"if if statment
+"el else statment
+"ife if else statment
+"ei else if statment
+"ter ternary operator
+"tc try catch
+"tcf try catch finally
+"af arrow function
+"afb arrow function with body
+"fe forEach loop
+"map map
+"reduce
+"filter
+"ol obj literal
+"slol same line obj literal
+"kv key/value pair
+"r return
+"rc return component
+"cb node.js style callback
+"re require
+"rel require ./ local
+"req require assignment
+"reql require local assignment
+"dreq
+"dreql
+"me module.exports
+"meo module.exports = {}
+
+"https://github.com/dsznajder/vscode-es7-javascript-react-snippets",
+let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1278/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript"]
+
+nnoremap <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
+
 "nnoremap <leader><leader><C-c> :CocInstall coc-python
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -94,6 +154,7 @@ filetype plugin on
 "set paste toggle
 set pastetoggle=<Leader><Leader>p
 
+" VISUALLY SELECT AND "+p TO YANK TO SYSTEM CLIPBOARD
 " VISUALLY SELECT AND "p y OR ANY LETTER OR NUMBER YANKS TO SPECIFIC REGISTER
 " TO PASTE IT PRESS "p p
 " :reg TO CHECK OUT PRINT REGISTER
@@ -118,21 +179,23 @@ vnoremap <C-k> :m '>-1<CR>gv=gv
 
 
 syntax on
-colorscheme dracula
 "set clipboard=unnamed
 
 " LINUX CONFIG ONLY LEAVE OUT FOR OSX
 set clipboard+=unnamedplus
 
 "set pastetoggle=<F2>
+"NEEDED THIS ORDER TO REMOVE UGLY HIGHLIGHTING
 set mouse=a
+let g:dracula_italic = 0
 set t_Co=256
+colorscheme dracula
 highlight Normal ctermbg=None
 
-"set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+set rtp+=/home/jonathan/.vim/plugged/
 
 let g:fzf_colors =
-	\ { 'fg':      ['fg', 'Normal'],
+  \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -151,12 +214,19 @@ let g:fzf_buffers_jump = 1
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>n :files<CR>
 nmap <Leader>m :bufdo! bw<CR>
+nmap <Leader>ju :jumps<CR>
+nnoremap <Leader>t :Tags<CR>
 
 " OLD FOR USING YOU COMPLETE ME AND NEEDING TAGS
 "set tags=tags
 
 " set leaderf to open FZF
 nmap <Leader>f :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
 
 " USEFUL FOR POPULATING QUICKFIX WINDOW
 let g:ackprg = 'rg --vimgrep --no-heading'
@@ -172,6 +242,12 @@ let mapleader="\\"
 
 "re-map esc to jk
 inoremap jk <esc>
+
+"refresh marks if out of sync
+nnoremap <leader>sr :SignatureRefresh<CR>
+
+"map to call up jump list
+nnoremap <leader>ju :ju<CR>
 
 "emmet leader key
 let g:user_emmet_leader_key=','
@@ -197,6 +273,15 @@ set wildmode=longest:full,full
 
 set number
 
+function! LineNumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <leader>nt :call LineNumberToggle()<cr>
+
 set incsearch
 
 set hidden
@@ -208,39 +293,40 @@ map <C-n> :NERDTreeToggle<CR>
 " ALE Config.  more below
 " Enable completion where available.
  " This setting must be set before ALE is loaded.
- let g:ale_completion_enabled = 1
+ " let g:ale_completion_enabled = 1
  set wildmode=longest:full,full
 
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
 
 " better rainbow parentheses color options
-let g:rbpt_colorpairs = [
-		\ ['darkMagenta',       'RoyalBlue3'],
-		\ ['Darkblue',    'SeaGreen3'],
-		\ ['darkgray',    'DarkOrchid3'],
-		\ ['darkgreen',   'seagreen3'],
-		\ ['darkcyan',    'RoyalBlue3'],
-		\ ['darkblue',     'SeaGreen3'],
-		\ ['darkmagenta', 'DarkOrchid3'],
-		\ ['darkMagenta',       'seagreen3'],
-		\ ['gray',        'RoyalBlue3'],
-		\ ['darkcyan',       'SeaGreen3'],
-		\ ['darkmagenta', 'DarkOrchid3'],
-		\ ['Darkblue',    'darkcyan'],
-		\ ['darkgreen',   'RoyalBlue3'],
-		\ ['darkcyan',    'SeaGreen3'],
-		\ ['lightmagenta',     'DarkOrchid3'],
-		\ ['lightcyan',         'darkmagenta'],
-		\ ]
-
-
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
+" let g:rbpt_colorpairs = [
+"     \ ['darkMagenta',       'RoyalBlue3'],
+"     \ ['Darkblue',    'SeaGreen3'],
+"     \ ['darkgray',    'DarkOrchid3'],
+"     \ ['darkgreen',   'seagreen3'],
+"     \ ['darkcyan',    'RoyalBlue3'],
+"     \ ['darkblue',     'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['darkMagenta',       'seagreen3'],
+"     \ ['gray',        'RoyalBlue3'],
+"     \ ['darkcyan',       'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['Darkblue',    'darkcyan'],
+"     \ ['darkgreen',   'RoyalBlue3'],
+"     \ ['darkcyan',    'SeaGreen3'],
+"     \ ['lightmagenta',     'DarkOrchid3'],
+"     \ ['lightcyan',         'darkmagenta'],
+"     \ ]
+"
+"
+" let g:rbpt_max = 16
+" let g:rbpt_loadcmd_toggle = 0
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
+" let g:javascript_plugin_flow = 1
+" let g:jsx_ext_required = 0
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -290,17 +376,17 @@ let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
 " In ~/.vim/vimrc, or somewhere similar.
-let g:ale_fixers = {
- \   '*': ['remove_trailing_lines', 'trim_whitespace'],
- \   'javascript': ['eslint', 'prettier'],
- \}
- let g:ale_fixers = ['prettier', 'eslint']
+" let g:ale_fixers = {
+ " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+ " \   'javascript': ['eslint', 'prettier'],
+ " \}
+ " let g:ale_fixers = ['prettier', 'eslint']
 " Set this variable to 1 to fix files when you save them.
 "let g:ale_fix_on_save = 1
 " set to 0 to disable fix files on save
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 "leader key for prettier and ale
-nmap <leader>d <Plug>(ale_fix)
+" nmap <leader>d <Plug>(ale_fix)
 set completeopt+=noinsert
 
 "searching
@@ -363,9 +449,10 @@ set foldlevel=1
 nnoremap <space> za
 
 "  shortcut to save
- nmap <leader>w :w<cr>
+nmap <leader>w :w<cr>
+nmap <leader>wa :wa<cr>
 
- " scroll the viewport faster
+" scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
@@ -381,27 +468,27 @@ set nocompatible
 " hack work around for css highlighting.  use Ctrl h, and then run Ctrl v. fixes
 " highlighting and reverts colors back to how they should be
 nnoremap <C-h> :syntax on <cr>
-nnoremap <C-v> :source ~/.config/nvim/init.vim <cr>
+nnoremap <C-v> :source ~/.vimrc <cr>
 
 
 " ALE
-let g:ale_set_highlights = 0
-let g:ale_change_sign_column_color = 0
-"let g:ale_sign_column_always = 1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-let g:ale_echo_msg_error_str = '✖'
-let g:ale_echo_msg_warning_str = '⚠'
-let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-let g:ale_completion_enabled = 0
+"let g:ale_set_highlights = 0
+"let g:ale_change_sign_column_color = 0
+""let g:ale_sign_column_always = 1
+"let g:ale_sign_error = '✖'
+"let g:ale_sign_warning = '⚠'
+"let g:ale_echo_msg_error_str = '✖'
+"let g:ale_echo_msg_warning_str = '⚠'
+"let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
+"let g:ale_completion_enabled = 0
 
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fixers['json'] = ['prettier']
-let g:ale_fixers['css'] = ['prettier']
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_fix_on_save = 1
+"let g:ale_fixers = {}
+"let g:ale_fixers['javascript'] = ['prettier']
+"let g:ale_fixers['json'] = ['prettier']
+"let g:ale_fixers['css'] = ['prettier']
+"let g:ale_javascript_prettier_use_local_config = 1
+"let g:ale_fix_on_save = 1
 
 set splitbelow
 set splitright
@@ -538,3 +625,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>o
+
+
