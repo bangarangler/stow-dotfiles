@@ -48,5 +48,5 @@ windows:
         - vim
   - shell | devServer:
       panes:
-        - npm start
+        - npm run dev
         - ls
