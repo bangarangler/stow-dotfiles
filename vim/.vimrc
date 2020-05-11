@@ -2,6 +2,7 @@ call plug#begin()
 "Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
 Plug 'luochen1990/rainbow'
+Plug 'unblevable/quick-scope'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
@@ -170,6 +171,15 @@ vnoremap <C-k> :m '>-1<CR>gv=gv
 ":'a,'bs/C/S/c  changes all c's above to S
 " global search and replace with confirm y or n
 ":%s/img/jpg/gc
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" augroup qs_colors
+"   autocmd!
+"   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f'
+" gui=underline ctermfg=155 cterm=underline
+"   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff'
+" gui=underline ctermfg=81 cterm=underline
+" augroup END
 
 " NEOVIM HAS IT BY DEFAULT UNCOMMENT FOR VIM
 ""matchit.vim
