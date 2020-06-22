@@ -1,6 +1,7 @@
 call plug#begin()
 "Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
+Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'kshenoy/vim-signature'
@@ -136,6 +137,14 @@ nnoremap <leader>p <Plug>(coc-format-selected)
 
 let g:ranger_map_keys = 0
 map <leader>r :Ranger<CR>
+
+"VISTA SETTINGS
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_fzf_preview = ['right:50%']
+
+map <leader>v :Vista!!<CR>
+map <leader>vc :Vista coc<CR>
+map <leader>vf :Vista finder coc<CR>
 
 
 filetype plugin indent on

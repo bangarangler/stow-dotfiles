@@ -1,6 +1,7 @@
 call plug#begin()
 "Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
+Plug 'liuchengxu/vista.vim'
 Plug 'unblevable/quick-scope'
 Plug 'luochen1990/rainbow'
 Plug 'kshenoy/vim-signature'
@@ -136,6 +137,14 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 vmap <leader>p <Plug>(coc-format-selected)
 nnoremap <leader>p <Plug>(coc-format-selected)
+
+"VISTA SETTINGS
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_fzf_preview = ['right:50%']
+
+map <leader>v :Vista!!<CR>
+map <leader>vc :Vista coc<CR>
+map <leader>vf :Vista finder coc<CR>
 
 " ranger for vim
 " let g:ranger_map_keys = 0
