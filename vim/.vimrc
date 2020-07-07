@@ -547,6 +547,10 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+nmap <leader>rr <Plug>(coc-rename)
+
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
