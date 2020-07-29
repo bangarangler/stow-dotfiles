@@ -34,7 +34,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'w0rp/ale'
 "Plug 'dense-analysis/ale'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Plug 'honza/vim-snippets'
 " Plug 'epilande/vim-es2015-snippets'
 " Plug 'epilande/vim-react-snippets'
@@ -49,7 +49,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "Plug 'groenewege/vim-less', { 'for': 'less' }
 "Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'gko/vim-coloresque'
+" Plug 'gko/vim-coloresque'
+Plug 'ap/vim-css-color'
 "Plug 'stephenway/postcss.vim', { 'for': 'css' }
 " Plug 'elzr/vim-json', { 'for': 'json'  }
 " let g:vim_json_syntax_conceal = 0
@@ -66,7 +67,7 @@ Plug 'pablopunk/dynamic-file-completion.vim'
 " Plug 'francoiscabrol/ranger.vim'
 " ranger for nvim
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-Plug 'styled-components/vim-styled-components'
+" Plug 'styled-components/vim-styled-components'
 Plug 'tpope/vim-abolish'
 "Plug 'jparise/vim-graphql'
 Plug 'tmhedberg/simpylfold'
@@ -127,7 +128,7 @@ call plug#end()
 "meo module.exports = {}
 
 "https://github.com/dsznajder/vscode-es7-javascript-react-snippets",
-let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1278/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript"]
+let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1278/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript", 'coc-svelte']
 
 nnoremap <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
 
