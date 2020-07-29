@@ -1,37 +1,72 @@
 call plug#begin()
-"Plug 'junegunn/rainbow_parentheses.vim'
-" Plug 'kien/rainbow_parentheses.vim'
+" View and Search LSP symbols, tags in Vim/NeoVim
 Plug 'liuchengxu/vista.vim'
-Plug 'luochen1990/rainbow'
+" An always-on highlight for a unique character in every word
 Plug 'unblevable/quick-scope'
+" Improved Rainbow Parentheses
+Plug 'luochen1990/rainbow'
+" Display marks visually and work with them
 Plug 'kshenoy/vim-signature'
+" All your git needs
 Plug 'tpope/vim-fugitive'
-Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
+" Search Tools
+Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" File Explorer
 Plug 'scrooloose/nerdtree'
+" Visual
 Plug 'ryanoasis/vim-devicons'
-"Plug 'scroloose/nerdcommenter'
-"Plug 'ddollar/nerdcommenter'
-" Plug 'tpope/vim-commentary'
-Plug 'tomtom/tcomment_vim'
-"Plug 'kabbamine/vcoolor.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'easymotion/vim-easymotion'
-Plug 'mattn/emmet-vim'
-"Plug 'scrooloose/syntastic'
-"Plug 'ervandew/supertab'
-"Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --ts-completer' }
 Plug 'dracula/vim', { 'as': 'dracula' }
-"Plug 'pangloss/vim-javascript'
-Plug 'sirver/ultisnips'
-"Plug 'isruslan/vim-es6'
-Plug 'sheerun/vim-polyglot'
+" Commenting
+Plug 'tomtom/tcomment_vim'
+" Visually see white space
+Plug 'ntpeters/vim-better-whitespace'
+" Movement
+Plug 'easymotion/vim-easymotion'
+" Utility
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
+Plug 'pablopunk/dynamic-file-completion.vim'
+Plug 'tpope/vim-abolish'
+" Snippets
+Plug 'sirver/ultisnips'
+" Syntax Highlighting
+Plug 'sheerun/vim-polyglot'
+Plug 'valloric/matchtagalways'
+" CSS
+Plug 'ap/vim-css-color'
+" Copy Pasting Formatting
+Plug 'sickill/vim-pasta'
+" Nice additional features
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sleuth'
+" Ranger
+Plug 'francoiscabrol/ranger.vim'
+" Python
+Plug 'tmhedberg/simpylfold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+" Coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Docker
+Plug 'ekalinin/dockerfile.vim'
+" NO LONGER BEING USED OR TESTING
+"Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
+"Plug 'scroloose/nerdcommenter'
+"Plug 'ddollar/nerdcommenter'
+" Plug 'tpope/vim-commentary'
+"Plug 'kabbamine/vcoolor.vim'
+"Plug 'scrooloose/syntastic'
+"Plug 'ervandew/supertab'
+"Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --ts-completer' }
+"Plug 'pangloss/vim-javascript'
+"Plug 'isruslan/vim-es6'
 "Plug 'w0rp/ale'
 "Plug 'dense-analysis/ale'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -50,30 +85,17 @@ Plug 'jiangmiao/auto-pairs'
 "Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 " Plug 'gko/vim-coloresque'
-Plug 'ap/vim-css-color'
 "Plug 'stephenway/postcss.vim', { 'for': 'css' }
 " Plug 'elzr/vim-json', { 'for': 'json'  }
 " let g:vim_json_syntax_conceal = 0
-Plug 'sickill/vim-pasta'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sleuth'
-Plug 'valloric/matchtagalways'
 "Plug 'joonty/vdebug'
 " let g:mta_filetypes = {
 "       \ 'javascript.jsx' : 1,
 "       \}
-Plug 'pablopunk/dynamic-file-completion.vim'
-Plug 'francoiscabrol/ranger.vim'
 " Plug 'styled-components/vim-styled-components'
-Plug 'tpope/vim-abolish'
 "Plug 'jparise/vim-graphql'
-Plug 'tmhedberg/simpylfold'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'nvie/vim-flake8'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB'
-Plug 'ekalinin/dockerfile.vim'
 call plug#end()
 
 "SNIPPETS
@@ -124,9 +146,11 @@ call plug#end()
 "me module.exports
 "meo module.exports = {}
 
+" Coc Install this on start
 "https://github.com/dsznajder/vscode-es7-javascript-react-snippets",
 let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1278/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript", 'coc-svelte']
 
+" This fails to install so have a mapping to install it
 nnoremap <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
 
 "nnoremap <leader><leader><C-c> :CocInstall coc-python
@@ -362,8 +386,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 " this turns tab off for YCM.
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
 " now cycle through with <C-N> and <C-P> keys
 
 "auto clear white space on save
@@ -535,6 +559,7 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
+" Coc Stuff
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
