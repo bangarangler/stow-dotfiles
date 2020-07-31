@@ -1,181 +1,373 @@
+" vim-plug ---
+" call plug#begin('~/.config/nvim/plugged')
 call plug#begin()
+" Viewer and Finder for LSP symbols and tags
 Plug 'liuchengxu/vista.vim'
-" An always-on highlight for a unique character in every word on a line to help you use f, F and family.
-Plug 'unblevable/quick-scope'
-" Improved Rainbow Parentheses
-Plug 'luochen1990/rainbow'
-" Display marks visually and work with them
-Plug 'kshenoy/vim-signature'
-" All your git needs
+
+" Git Plugins ---
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Search Tool
-Plug 'mileszs/ack.vim'
+Plug 'idanarye/vim-merginal'
+
+" FZF ---
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" File Explorer
+
+" File Explorer ---
 Plug 'scrooloose/nerdtree'
-" Visual
+
+" Visual Improvments ---
 Plug 'ryanoasis/vim-devicons'
-Plug 'dracula/vim', { 'as': 'dracula' }
-" Commenting
+" Rainbow Parentheses ---
+Plug 'luochen1990/rainbow'
+
+" Commenting ---
 Plug 'tomtom/tcomment_vim'
-" Visually see white space
+
+" Color Selection ---
+Plug 'kabbamine/vcoolor.vim'
+
+" WhiteSpace Plugins ---
 Plug 'ntpeters/vim-better-whitespace'
-" Movement
+
+" Motion Plugins ---
 Plug 'easymotion/vim-easymotion'
-" Utility
+Plug 'unblevable/quick-scope'
+Plug 'kshenoy/vim-signature'
+
+" Emmit ---
 Plug 'mattn/emmet-vim'
+
+" Colors
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'davidcelis/vim-ariake-dark'
+Plug 'joshdick/onedark.vim'
+Plug 'jnurmine/zenburn'
+Plug 'jonathanfilip/vim-lucius'
+
+" COC ---
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"Plug 'sirver/ultisnips'
+
+" Handle Surrounding things
 Plug 'tpope/vim-surround'
+
+" Indentation guide lines ---
 Plug 'nathanaelkane/vim-indent-guides'
+
+" Extend % for matching things
 Plug 'vim-scripts/matchit.zip'
-Plug 'jiangmiao/auto-pairs'
+
+" TODO: Auto Pairs
+" Plug 'jiangmiao/auto-pairs'
+
+" Indentation adjusted to destination context
+Plug 'sickill/vim-pasta'
+
+" TODO: Ack
+Plug 'mileszs/ack.vim'
+
+" Pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
+
+" Heuristically set buffer options
+Plug 'tpope/vim-sleuth'
+
+" Highlight enclsosing html/xml tags
+Plug 'valloric/matchtagalways'
+
+" Vim's native file completion but relative to the current file
 Plug 'pablopunk/dynamic-file-completion.vim'
-Plug 'tpope/vim-abolish'
-" Snippets
-Plug 'sirver/ultisnips'
+
+" ranger for nvim
+Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+
+"ranger for vim
+" Plug 'francoiscabrol/ranger.vim'
+
+" Substitute, Search, abbriveate multiple variants of a word
+Plug 'tpope/vim-abolish/'
+
 " Syntax Highlighting
 Plug 'sheerun/vim-polyglot'
-Plug 'valloric/matchtagalways'
-" CSS
+
+" CSS show colors ---
 Plug 'ap/vim-css-color'
-" Copy Pasting Formatting
-Plug 'sickill/vim-pasta'
-" Nice additionl features
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sleuth'
-" Ranger
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-"Plug 'jparise/vim-graphql'
-" Python
+
+" GraphQL ---
+Plug 'jparise/vim-graphql'
+
+
+" Python ---
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
-" Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Docker
+Plug 'davidhalter/jedi-vim'
+
+" Docker ---
 Plug 'ekalinin/dockerfile.vim'
-"NO LONGER BEING USED OR TESTING
+
+" Tmux Navigation
+" Plug 'christoomey/vim-tmux-navigator'
+
+
+" Testing / No longer used"
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'vim-scripts/Conque-GDB'
 "Plug 'junegunn/rainbow_parentheses.vim'
-" Plug 'kien/rainbow_parentheses.vim'
-" View and search LSP symbols, tags in Vim/NeoVim.
-"Plug 'scroloose/nerdcommenter'
-"Plug 'ddollar/nerdcommenter'
-"Plug 'kabbamine/vcoolor.vim'
-" Plug 'tpope/vim-commentary'
+"Plug 'kien/rainbow_parentheses.vim'
+"Plug 'scrooloose/nerdcommenter'
+"Plug 'tpope/vim-commentary'
 "Plug 'scrooloose/syntastic'
 "Plug 'ervandew/supertab'
 "Plug 'valloric/youcompleteme', { 'do': 'python3 install.py --ts-completer' }
 "Plug 'pangloss/vim-javascript'
 "Plug 'isruslan/vim-es6'
+"Plug 'maxmellon/vim-jsx-pretty'
 "Plug 'w0rp/ale'
-"Plug 'dense-analysis/ale'
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" Plug 'honza/vim-snippets'
-" Plug 'epilande/vim-es2015-snippets'
-" Plug 'epilande/vim-react-snippets'
-" Plug 'https://github.com/nathanchapman/vscode-javascript-snippets'
-"Plug 'mlaursen/vim-react-snippets'
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+"Plug 'honza/vim-snippets'
+"Plug 'epilande/vim-es2015-snippets'
+"Plug 'epilande/vim-react-snippets'
 "Plug 'othree/html5.vim', { 'for': 'html'  }
 "Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
-" Plug 'moll/vim-node', { 'for': 'javascript' }
-" Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
-" let g:jsx_ext_required = 0
+"Plug 'moll/vim-node', { 'for': 'javascript' }
+"Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
+"let g:jsx_ext_required = 0
 "Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 "Plug 'groenewege/vim-less', { 'for': 'less' }
 "Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 " Plug 'gko/vim-coloresque'
 "Plug 'stephenway/postcss.vim', { 'for': 'css' }
-" Plug 'elzr/vim-json', { 'for': 'json'  }
-" let g:vim_json_syntax_conceal = 0
+"Plug 'elzr/vim-json', { 'for': 'json'  }
+"let g:vim_json_syntax_conceal = 0
 "Plug 'joonty/vdebug'
-" let g:mta_filetypes = {
-"       \ 'javascript.jsx' : 1,
-"       \}
-" ranger for vim
-" Plug 'francoiscabrol/ranger.vim'
-" ranger for nvim
-" Plug 'styled-components/vim-styled-components'
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'vim-scripts/Conque-GDB'
+"let g:mta_filetypes = {
+      "\ 'javascript.jsx' : 1,
+      "\}
+"Plug 'styled-components/vim-styled-components'
 call plug#end()
 
-"SNIPPETS
-"nfn const fn = (params) => {}
-"clo console.log(':',)
-"imp import moduleName from 'module'
-"imd import { destructuredModule } from 'module'
-"exp export default moduleName
-"exd export { destructuredModule } from 'module'
-"sw switch statment
-"fl basic for loop
-"dob const {propName} = objectToDestructure
-"dar const [propName] = arrayToDestructure
-"imr import React from 'react'
-"imrd import ReactDOM from 'react-dom'
-"imrc import React, { Component } from 'react'
-"imrs import React, { useState } from 'react'
-"imrse import React, { useState, useEffect } from 'react'
-"ren render() { return(  ) }
-"rfce and or rfc react functional component export
-"l= let {${1:name}} = ${2:value}
-"co= const {${1:name}} = ${2:value}
-"if if statment
-"el else statment
-"ife if else statment
-"ei else if statment
-"ter ternary operator
-"tc try catch
-"tcf try catch finally
-"af arrow function
-"afb arrow function with body
-"fe forEach loop
-"map map
-"reduce
-"filter
-"ol obj literal
-"slol same line obj literal
-"kv key/value pair
-"r return
-"rc return component
-"cb node.js style callback
-"re require
-"rel require ./ local
-"req require assignment
-"reql require local assignment
-"dreq
-"dreql
-"me module.exports
-"meo module.exports = {}
+"https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
+let g:coc_global_extensions = ["coc-json", "coc-tsserver", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1279/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript", "coc-svelte"]
+map <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
 
-" COC Install this on start
-"https://github.com/dsznajder/vscode-es7-javascript-react-snippets",
-let g:coc_global_extensions = ["coc-tsserver", "coc-json", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1278/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript", 'coc-svelte']
+" Basic Settings
+filetype plugin indent on
+filetype on
+filetype plugin on
+syntax on
+" MacOS CONFIG
+" set clipboard=unnamed
+" TODO: LINUX CONFIG
+set clipboard+=unnamedplus
+set mouse=a
+set t_Co=256
+set nocompatible
 
-" This fails to install so have command to manually instal it
-nnoremap <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
+" Split Settings
+set splitbelow
+set splitright
+"split navigations Ctrl [J K L H]
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
-"nnoremap <leader><leader><C-c> :CocInstall coc-python
+"no backup files
+set nobackup
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" only in case you don't want a backup file while editing
+set nowritebackup
 
-vmap <leader>p <Plug>(coc-format-selected)
-nnoremap <leader>p <Plug>(coc-format-selected)
+" no swap files
+set noswapfile
 
-"VISTA SETTINGS
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_fzf_preview = ['right:50%']
+" Line Wrapping
+" text wrap
+:set tw=80
+:set fo+=t
+set wrap " turn on line wrapping
+set wrapmargin=8 " wrap lines when coming within n characters from side
+set linebreak " set soft wrapping
+set showbreak=… " show ellipsis at breaking
+set autoindent " automatically set indent of new line
+set ttyfast " faster redrawing
+set diffopt+=vertical
+set laststatus=2 " show the satus line all the time
+set so=7 " set 7 lines to the cursors - when moving vertical
+set showcmd " show incomplete commands
 
-map <leader>v :Vista!!<CR>
-map <leader>vc :Vista coc<CR>
-map <leader>vf :Vista finder coc<CR>
+" Tab Control
+set expandtab " insert tabs rather than spaces for <Tab>
+set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+set tabstop=2 " the visible width of tabs
+set softtabstop=2 " edit as if the tabs are 4 characters wide
+set shiftwidth=2 " number of spaces to use for indent and unindent
+set smartindent
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
 
-" ranger for vim
-" let g:ranger_map_keys = 0
-" map <leader>r :Ranger<CR>
+" Code Folding Settings
+set foldmethod=indent " fold based on indent
+set foldlevelstart=99
+set foldnestmax=10 " deepest fold is 10 levels
+set nofoldenable " don't fold by default
+set foldlevel=1
 
-" ranger for nvim
+" map to fold
+nnoremap <space> za
+
+" Color Scheme
+let g:dracula_italic = 0
+colorscheme dracula
+highlight Normal ctermbg=None
+
+" Ariake Dark
+" colorscheme Ariake-Dark
+" Linux
+" colorscheme ariake-dark
+" set background=dark
+" highlight clear SignColumn
+" highlight clear LineNr
+
+" OneDark
+" colorscheme onedark
+" " g:onedark_hide_endofbuffer: 1
+" " g:onedark_terminal_italics: 1
+" let g:onedark_termcolors=256
+" highlight Normal ctermbg=None
+" highlight clear SignColumn
+" highlight clear LineNr
+
+" Zenburn
+" colors zenburn
+" highlight Normal ctermbg=None
+" highlight clear SignColumn
+" highlight clear LineNr
+
+" Lucius
+" colorscheme lucius
+" highlight Normal ctermbg=None
+" highlight clear SignColumn
+" highlight clear LineNr
+
+" TODO: hack work around for css highlighting.  use Ctrl h, and then run Ctrl v. fixes
+" highlighting and reverts colors back to how they should be
+nnoremap <C-h :syntax on <cr>
+nnoremap <C-v> :source ~/.config/nvim/init.vim <cr>
+
+"Polyglot enable syntax
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+
+" Line Numbers
+set number
+
+function! LineNumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+" Leader nt toggles relative/number
+nnoremap <leader>nt :call LineNumberToggle()<cr>
+
+" Search
+set showmatch
+set wildmenu
+set wildmode=longest:full,full
+set hidden
+set completeopt+=noinsert
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch " set incremental search, like modern browsers
+set nolazyredraw " don't redraw while executing macros
+set magic " Set magic on, for regex
+
+" Settings error bells
+set noerrorbells
+set visualbell
+"set t_vb=
+"set tm=500
+
+"TODO: clear results after search space ctrl l
+nnoremap <C-L> :noh<CR><C-L>
+
+
+" set leader key to \
+let mapleader="\\"
+
+"re-map esc to jk
+inoremap jk <esc>
+
+"emmet leader key
+let g:user_emmet_leader_key=','
+
+" Don's skip lines
+nnoremap j gj
+nnoremap k gk
+
+"  shortcut to save
+ nmap <leader>w :w<cr>
+ nmap <leader>wa :wa<cr>
+
+ "edit ~/.vim
+"  map <leader>ev :e! ~/.vimrc<cr>
+map <leader>ev :e! ~/config/nvim/init.vim<cr>
+
+ " scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" White Space
+"auto clear white space on save
+autocmd BufWritePre * StripWhitespace
+
+" Settings vim-signature
+" refresh marks if out of sync
+nnoremap <leader>sr :SignatureRefresh<CR>
+
+" TODO: Settings vim-fugitive mappings
+" :Gdiff
+" nnoremap <leader>gd : Gdiffsplit!<CR>
+" " :diffget //2 file visually on the left
+" nnoremap gd2 :diffget //2<CR>
+" " :diffget //3 file visually on the right
+" nnoremap gd3 :diffget //3<CR>
+" " :diffupdate -- fix spacing after change
+" nnoremap gdu :diffupdate<CR>
+
+" fugitive mappings
+" :Gdiff
+nnoremap <leader>gd : Gdiff<CR>
+" :diffget //2 file visually on the left
+nnoremap gd2 :diffget //2<CR>
+" :diffget //3 file visually on the right
+nnoremap gd3 :diffget //3<CR>
+" :diffupdate -- fix spacing after change
+nnoremap gdu :diffupdate<CR>
+
+" Merginal Settings
+" :Merginal plugin for branches
+nnoremap <leader>gm :Merginal<CR>
+
+" NERDTree Settings
+"NERDTree toggle
+map <C-n> :NERDTreeToggle<CR>
+
+" Indent Guide Plugin Settings
+"<Leader>ig "toggles indent guides
+nnoremap <leader>ig :IndentGuidesToggle<CR>
+
+" Ranger nvim Config ---
 " Make Ranger replace netrw and be the file explorer
 let g:rnvimr_ex_enable = 1
 
@@ -233,74 +425,61 @@ map <leader>r :RnvimrToggle<CR>
 "             \ {'width': 1.000, 'height': 0.500, 'col': 0, 'row': 0.5}]
 
 
-filetype plugin indent on
-filetype on
-filetype plugin on
-"set omnifunc=syntaxcomplete#Complete
-""set completeopt=longest,menuone
-""makes enter key select highlighted text like <C-y>
-":inoremap <expr> <CR> pumvisible() ? '\<C-y>' : "\<C-g>u\<CR>"
-""Make <C-N> work as usual when menu appears simulate down key
-"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  "\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-""simulates c-x c-o then simulates c-n c-p and then down
-"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  "\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
- "omni completion <C-X><C-O> open pop up <C-N> forward <C-P> back
-"set paste toggle
-set pastetoggle=<Leader><Leader>p
+" Vim Ranger
+" let g:ranger_map_keys = 0
+" map <leader>r :Ranger<CR>
+"Ranger // open current file by default
+"RangerCurrentFile // Default Ranger behaviour
+"RangerCurrentDirectory
+"RangerWorkingDirectory
 
-" VISUALLY SELECT AND "+p TO YANK TO SYSTEM CLIPBOARD
-" VISUALLY SELECT AND "p y OR ANY LETTER OR NUMBER YANKS TO SPECIFIC REGISTER
-" TO PASTE IT PRESS "p p
-" :reg TO CHECK OUT PRINT REGISTER
+"RangerNewTab
+"RangerCurrentFileNewTab
+"RangerCurrentDirectoryNewTab
+"RangerWorkingDirectoryNewTab
 
-" move lines up or dowwn
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '>-1<CR>gv=gv
+" Rainbow Parentheses
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
-"ma - mark a `a to return, mb = mark b `b to return
-":'a,'bs/C/S/c  changes all c's above to S
-" global search and replace with confirm y or n
-":%s/img/jpg/gc
-
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" augroup qs_colors
-"   autocmd!
-"   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f'
-" gui=underline ctermfg=155 cterm=underline
-"   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff'
-" gui=underline ctermfg=81 cterm=underline
-" augroup END
-
-" NEOVIM HAS IT BY DEFAULT UNCOMMENT FOR VIM
-""matchit.vim
-":filetype plugin on
-"packadd! matchit
+" better rainbow parentheses color options
+" let g:rbpt_colorpairs = [
+" 		\ ['darkMagenta',       'RoyalBlue3'],
+" 		\ ['Darkblue',    'SeaGreen3'],
+" 		\ ['darkgray',    'DarkOrchid3'],
+" 		\ ['darkgreen',   'seagreen3'],
+" 		\ ['darkcyan',    'RoyalBlue3'],
+" 		\ ['darkblue',     'SeaGreen3'],
+" 		\ ['darkmagenta', 'DarkOrchid3'],
+" 		\ ['darkMagenta',       'seagreen3'],
+" 		\ ['gray',        'RoyalBlue3'],
+" 		\ ['darkcyan',       'SeaGreen3'],
+" 		\ ['darkmagenta', 'DarkOrchid3'],
+" 		\ ['Darkblue',    'darkcyan'],
+" 		\ ['darkgreen',   'RoyalBlue3'],
+" 		\ ['darkcyan',    'SeaGreen3'],
+" 		\ ['lightmagenta',     'DarkOrchid3'],
+" 		\ ['lightcyan',         'darkmagenta'],
+" 		\ ]
 
 
-syntax on
-"set clipboard=unnamed
+" let g:rbpt_max = 16
+" let g:rbpt_loadcmd_toggle = 0
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
-" LINUX CONFIG ONLY LEAVE OUT FOR OSX
-set clipboard+=unnamedplus
+" TODO: Copy Paste
+" set pastetoggle=<Leader><Leader>p
 
-"set pastetoggle=<F2>
-"NEEDED THIS ORDER TO REMOVE UGLY HIGHLIGHTING
-set mouse=a
-let g:dracula_italic = 0
-set t_Co=256
-colorscheme dracula
-highlight Normal ctermbg=None
-
-set rtp+=/home/jonathan/.vim/plugged/
-
+" FZF Settings
+" TODO: set rtp+=/usr/local/opt/fzf
+" set rtp+=/home/jonathan/.config/nvim/plugged
+set rtp+=~/.config/nvim/init.vim
+" set rtp+=/home/jonathan/dotfiles/neovim/.config/nvim/init.vim
+" customize fzf colors to match your color scheme
 let g:fzf_colors =
-  \ { 'fg':      ['fg', 'Normal'],
+	\ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -315,15 +494,20 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 let g:fzf_buffers_jump = 1
-"let g:fzf_tags_command = 'ctags -R'
+" let g:fzf_tags_command = 'ctags -R'
+"default :buffers
+" TODO: nmap <Leader>b :buffers<CR>
+"FZF :Buffers
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>n :files<CR>
 nmap <Leader>m :bufdo! bw<CR>
 nmap <Leader>ju :jumps<CR>
 nnoremap <Leader>t :Tags<CR>
 
-" OLD FOR USING YOU COMPLETE ME AND NEEDING TAGS
-"set tags=tags
+" TODO: map to call up jump list
+" nnoremap <leader>ju :ju<CR>
+
+" set tags=tags
 
 " set leaderf to open FZF
 nmap <Leader>f :FZF<CR>
@@ -332,6 +516,7 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+
 
 " USEFUL FOR POPULATING QUICKFIX WINDOW
 let g:ackprg = 'rg --vimgrep --no-heading'
@@ -342,272 +527,73 @@ let g:ackprg = 'rg --vimgrep --no-heading'
 set grepprg=rg\ --vimgrep
 set grepformat^=%f:%l:%c:%m
 
-" set leader key to \
-let mapleader="\\"
-
-"re-map esc to jk
-inoremap jk <esc>
-
-"refresh marks if out of sync
-nnoremap <leader>sr :SignatureRefresh<CR>
-
-"map to call up jump list
-nnoremap <leader>ju :ju<CR>
-
-"emmet leader key
-let g:user_emmet_leader_key=','
+" Settings for vcoolor
+let g:vcoolor_lowercase = 1
+let g:vcoolor_disable_mappings = 1
+let g:vcoolor_map = '<leader>c'
 
 
-" fugitive mappings
-" :Gdiff
-nnoremap <leader>gd : Gdiff<CR>
-" :diffget //2 file visually on the left
-nnoremap gd2 :diffget //2<CR>
-" :diffget //3 file visually on the right
-nnoremap gd3 :diffget //3<CR>
-" :diffupdate -- fix spacing after change
-nnoremap gdu :diffupdate<CR>
+" Line Movement
+move lines up or dowwn
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '>-1<CR>gv=gv
 
+" Quick Scope
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" augroup qs_colors
+"   autocmd!
+"   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+"   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+" augroup END
 
-set showmatch
-
-set wildmenu
-set wildmode=longest:full,full
-
-"set cursorline
-
-set number
-
-function! LineNumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
-nnoremap <leader>nt :call LineNumberToggle()<cr>
-
-set incsearch
-
-set hidden
-
-
-"NERDTree toggle
-map <C-n> :NERDTreeToggle<CR>
-
-" ALE Config.  more below
-" Enable completion where available.
- " This setting must be set before ALE is loaded.
- " let g:ale_completion_enabled = 1
- set wildmode=longest:full,full
-
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
-
-" better rainbow parentheses color options
-" let g:rbpt_colorpairs = [
-"     \ ['darkMagenta',       'RoyalBlue3'],
-"     \ ['Darkblue',    'SeaGreen3'],
-"     \ ['darkgray',    'DarkOrchid3'],
-"     \ ['darkgreen',   'seagreen3'],
-"     \ ['darkcyan',    'RoyalBlue3'],
-"     \ ['darkblue',     'SeaGreen3'],
-"     \ ['darkmagenta', 'DarkOrchid3'],
-"     \ ['darkMagenta',       'seagreen3'],
-"     \ ['gray',        'RoyalBlue3'],
-"     \ ['darkcyan',       'SeaGreen3'],
-"     \ ['darkmagenta', 'DarkOrchid3'],
-"     \ ['Darkblue',    'darkcyan'],
-"     \ ['darkgreen',   'RoyalBlue3'],
-"     \ ['darkcyan',    'SeaGreen3'],
-"     \ ['lightmagenta',     'DarkOrchid3'],
-"     \ ['lightcyan',         'darkmagenta'],
-"     \ ]
-"
-"
-" let g:rbpt_max = 16
-" let g:rbpt_loadcmd_toggle = 0
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
-" let g:javascript_plugin_flow = 1
-" let g:jsx_ext_required = 0
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-"set runtimepath+=~/.vim/ultisnips_rep
-"set runtimepath+=~/.vim/mysnippets/UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
-let g:UltiSnipsSnippetDir="~/.vim/mysnippets"
-"let g:UltiSnipsSnippetDirectories="~/.vim/mysnippets"
- " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-
-" this turns tab off for YCM.
-" let g:ycm_key_list_select_completion=[]
-" let g:ycm_key_list_previous_completion=[]
-" now cycle through with <C-N> and <C-P> keys
-
-"auto clear white space on save
-autocmd BufWritePre * StripWhitespace
-
-"<Leader>ig "toggles indent guides
-nnoremap <leader>ig :IndentGuidesToggle<CR>
-
-" text wrap
-:set tw=80
-:set fo+=t
-"gqq to break up a line if needed.
-" shiftj will join the bottome line to the line the cursor is on.
-
-" shift V to higlight and then > to indent the selected lines
-
-set nobackup  "no backup files
-set nowritebackup  " only in case you don't want a backup file while editing
-set noswapfile  " no swap files
-
-"Auto Pairs delete in pair input: foo[<BS>]
-"input: {i} (press <CR> at i) output: {
-"    i
-"}
-
-"Polyglot enable syntax
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
-
-" In ~/.vim/vimrc, or somewhere similar.
-" let g:ale_fixers = {
- " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
- " \   'javascript': ['eslint', 'prettier'],
- " \}
- " let g:ale_fixers = ['prettier', 'eslint']
-" Set this variable to 1 to fix files when you save them.
-"let g:ale_fix_on_save = 1
-" set to 0 to disable fix files on save
-" let g:ale_fix_on_save = 1
-"leader key for prettier and ale
-" nmap <leader>d <Plug>(ale_fix)
-set completeopt+=noinsert
-
-"searching
-set ignorecase " case insensitive searching
-set smartcase " case-sensitive if expresson contains a capital letter
-set hlsearch " highlight search results
-"clear results after search space ctrl l
-nnoremap <C-L> :noh<CR><C-L>
-set incsearch " set incremental search, like modern browsers
-set nolazyredraw " don't redraw while executing macros
-
-set magic " Set magic on, for regex
-
-" error bells
-set noerrorbells
-set visualbell
-"set t_vb=
-"set tm=500
-
-"set number " show line numbers
-set wrap " turn on line wrapping
-set wrapmargin=8 " wrap lines when coming within n characters from side
-set linebreak " set soft wrapping
-set showbreak=… " show ellipsis at breaking
-set autoindent " automatically set indent of new line
-set ttyfast " faster redrawing
-set diffopt+=vertical
-set laststatus=2 " show the satus line all the time
-set so=7 " set 7 lines to the cursors - when moving vertical
-set wildmenu " enhanced command line completion
-"set hidden " current buffer can be put into background
-set showcmd " show incomplete commands
-""set noshowmode " don't show which mode disabled for PowerLine
-set wildmode=list:longest " complete files like a shell
-"set cmdheight=1 " command bar height
-"set title " set terminal title
-set showmatch " show matching braces
-""set mat=2 " how many tenths of a second to blink
-
-"" Tab control
-
-set expandtab " insert tabs rather than spaces for <Tab>
-set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=2 " the visible width of tabs
-set softtabstop=2 " edit as if the tabs are 4 characters wide
-set shiftwidth=2 " number of spaces to use for indent and unindent
-set autoindent
-set smartindent
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
-
-"" code folding settings
-set foldmethod=indent " fold based on indent
-set foldlevelstart=99
-set foldnestmax=10 " deepest fold is 10 levels
-set nofoldenable " don't fold by default
-set foldlevel=1
-
-nnoremap <space> za
-
-"  shortcut to save
-nmap <leader>w :w<cr>
-nmap <leader>wa :wa<cr>
-
-" scroll the viewport faster
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
-
-"syntax enable
-" make the highlighting of tabs and other non-text less annoying
-"highlight SpecialKey ctermfg=19 guifg=#333333
-"highlight NonText ctermfg=19 guifg=#333333
-
-"set term=screen-256color
-":syntax on
-set nocompatible
-" hack work around for css highlighting.  use Ctrl h, and then run Ctrl v. fixes
-" highlighting and reverts colors back to how they should be
-nnoremap <C-h> :syntax on <cr>
-nnoremap <C-v> :source ~/.config/nvim/init.vim <cr>
-
-
-" ALE
-"let g:ale_set_highlights = 0
-"let g:ale_change_sign_column_color = 0
-""let g:ale_sign_column_always = 1
-"let g:ale_sign_error = '✖'
-"let g:ale_sign_warning = '⚠'
-"let g:ale_echo_msg_error_str = '✖'
-"let g:ale_echo_msg_warning_str = '⚠'
-"let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-"let g:ale_completion_enabled = 0
-
-
-"let g:ale_fixers = {}
-"let g:ale_fixers['javascript'] = ['prettier']
-"let g:ale_fixers['json'] = ['prettier']
-"let g:ale_fixers['css'] = ['prettier']
-"let g:ale_javascript_prettier_use_local_config = 1
-"let g:ale_fix_on_save = 1
-
-set splitbelow
-set splitright
+" PYTHON SETTINGS
+" PEP 8 indentation here
+"au BufNewFile,BufRead *.py
+    "\ set tabstop=4
+    "\ set softtabstop=4
+    "\ set shiftwidth=4
+    "\ set textwidth=79
+    "\ set expandtab
+    "\ set autoindent
+    "\ set fileformat=unix
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 textwidth=79
+"autocmd FileType puthon setlocal expandtab autoindent fileformat=unix
+"Flag unnecessary WhiteSpace
+"au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " UTF-8 Support
 set encoding=utf-8
 
-" if hidden is not set, TextEdit might fail.
-set hidden
+" C ********
+map <F8> :!gcc % -Wall -Wextra -o %< && ./%< <CR>
 
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
+
+"matchit.vim
+" :filetype plugin on
+" packadd! matchit
+" :source $VIMRUNTIME/macros/matchit.vim
+
+
+"VISTA SETTINGS
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_fzf_preview = ['right:50%']
+
+map <leader>v :Vista!!<CR>
+map <leader>vc :Vista coc<CR>
+map <leader>vf :Vista finder coc<CR>
+
+
+" Coc Settings
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+vmap <leader>p <Plug>(coc-format-selected)
+nnoremap <leader>p <Plug>(coc-format-selected)
 
 " Better display for messages
 set cmdheight=2
@@ -621,7 +607,6 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" Coc Stuff
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -634,8 +619,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-nmap <leader>rr <Plug>(coc-rename)
 
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
@@ -734,6 +717,118 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>o
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+"SNIPPETS
+"nfn const fn = (params) => {}
+"clo console.log(':',)
+"imp import moduleName from 'module'
+"imd import { destructuredModule } from 'module'
+"exp export default moduleName
+"exd export { destructuredModule } from 'module'
+"sw switch statment
+"fl basic for loop
+"dob const {propName} = objectToDestructure
+"dar const [propName] = arrayToDestructure
+"imr import React from 'react'
+"imrd import ReactDOM from 'react-dom'
+"imrc import React, { Component } from 'react'
+"imrs import React, { useState } from 'react'
+"imrse import React, { useState, useEffect } from 'react'
+"ren render() { return(  ) }
+"rfce and or rfc react functional component export
+"l= let {${1:name}} = ${2:value}
+"co= const {${1:name}} = ${2:value}
+"if if statment
+"el else statment
+"ife if else statment
+"ei else if statment
+"ter ternary operator
+"tc try catch
+"tcf try catch finally
+"af arrow function
+"afb arrow function with body
+"fe forEach loop
+"map map
+"reduce
+"filter
+"ol obj literal
+"slol same line obj literal
+"kv key/value pair
+"r return
+"rc return component
+"cb node.js style callback
+"re require
+"rel require ./ local
+"req require assignment
+"reql require local assignment
+"dreq
+"dreql
+"me module.exports
+"meo module.exports = {}
+
+" Notes
+"ma - mark a `a to return, mb = mark b `b to return
+":'a,'bs/C/S/c  changes all c's above to S
+" global search and replace with confirm y or n
+":%s/img/jpg/gc
+
+" ----------------------
+
+" VISUALLY SELECT AND "p y OR ANY LETTER OR NUMBER YANKS TO SPECIFIC REGISTER
+" TO PASTE IT PRESS "p p
+" :reg TO CHECK OUT PRINT REGISTER
+
+" ----------------------
+
+" default vim ctrl a will increment and ctrl x will decrement
+
+" ----------------------
+
+" vim Surround
+" normal mode
+" ds -delete a surrounding
+" cs -change a surrounding
+" ys -add a surrounding
+" yss -add a surrounding to the whole line
+" ySs -add a surrounding to the whole line, place it on a new line + indent
+" ySS -same as ySs
+" visual mode
+" s -in visual mode, add a surrounding
+" S -invisual mose, add a surrounding but place text on a new line and indend
+" Surroundings can be added with the same cs command, which takes a
+" surrounding target, or with the ys command that takes a valid vim motion.
+" special yss comand that applies a surrounding to the whole line, and ySS
+" that applies the surrounding to the whole line, places the text on a new
+" line and indents it.
+" (hello world) ysi(' - ('hello world')
+" hello world! ysiw) - hello (world)!
+" deleting surroundings ds
+" after ds command expects the surrounding target you want to delete.
+" ',",`,(,),{,},[,],<,>, and a special 't' target for deleting the ineermost
+" HTML tag
+" 'hello world' - ds' -- hello world
+" (123+4*56)/2 - ds( -- 123+4*56/2
+" <div>foo</div> dst -- foo
+" Surrounding can be changed with the cs command. takes a surrounding target
+" and it also takes the surrounding replacement.
+" more targets w for word, W for word + skip punctuation, s for sentence and p
+" for paragraph
+" "hello world" - cs"' -- 'hello world'
+" "hello world" - cs"<q> -- <q>hello world</q>
+" <div>foo</div> - cst<p> -- <p>foo</p>
+" foo! - csw' -- 'foo'!
+" foo! - csW' -- 'foo!'
+
+
+" ----------------------
+
+
+"gqq to break up a line if needed.
+" shiftj will join the bottome line to the line the cursor is on.
+
+" shift V to higlight and then > to indent the selected lines
+
 
 

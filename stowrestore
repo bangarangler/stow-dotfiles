@@ -2,7 +2,7 @@
 
 echo "restoring computer dotfiles"
 stow zsh
-#stow neovim
+stow neovim
 #stow i3
 stow Xresources
 stow tmux
