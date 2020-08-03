@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree'
 
 " Visual Improvments ---
 Plug 'ryanoasis/vim-devicons'
+
 " Rainbow Parentheses ---
 Plug 'luochen1990/rainbow'
 
@@ -48,6 +49,7 @@ Plug 'jonathanfilip/vim-lucius'
 " COC ---
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Snippets ---
 "Plug 'sirver/ultisnips'
 
 " Handle Surrounding things
@@ -56,16 +58,17 @@ Plug 'tpope/vim-surround'
 " Indentation guide lines ---
 Plug 'nathanaelkane/vim-indent-guides'
 
+" Not needed for Nvim
 " Extend % for matching things
-Plug 'vim-scripts/matchit.zip'
+" Plug 'vim-scripts/matchit.zip'
 
-" TODO: Auto Pairs
-" Plug 'jiangmiao/auto-pairs'
+" Auto Pairs
+Plug 'jiangmiao/auto-pairs'
 
 " Indentation adjusted to destination context
 Plug 'sickill/vim-pasta'
 
-" TODO: Ack
+" Ack
 Plug 'mileszs/ack.vim'
 
 " Pairs of handy bracket mappings
@@ -89,13 +92,16 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 " Substitute, Search, abbriveate multiple variants of a word
 Plug 'tpope/vim-abolish/'
 
-" Syntax Highlighting
+" Syntax Highlighting ---
 Plug 'sheerun/vim-polyglot'
+
+" Svelte highlighting ---
+Plug 'evanleck/vim-svelte'
 
 " CSS show colors ---
 Plug 'ap/vim-css-color'
 
-" GraphQL ---
+" GraphQL Highlighting ---
 Plug 'jparise/vim-graphql'
 
 
@@ -110,6 +116,9 @@ Plug 'ekalinin/dockerfile.vim'
 
 " Tmux Navigation
 " Plug 'christoomey/vim-tmux-navigator'
+
+" Startify ---
+Plug 'mhinz/vim-startify'
 
 
 " Testing / No longer used"
@@ -150,9 +159,33 @@ Plug 'ekalinin/dockerfile.vim'
 "Plug 'styled-components/vim-styled-components'
 call plug#end()
 
-"https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
-let g:coc_global_extensions = ["coc-json", "coc-tsserver", "coc-html", "coc-css", "coc-highlight", "coc-emmet", "coc-snippets", "coc-git", "coc-prettier", "https://github.com/xabikos/vscode-react",  "https://github.com/skyran1279/js-jsx-snippets", "https://github.com/nathanchapman/vscode-javascript-snippets", "https://github.com/florinpatrascu/vscode-elixir-snippets", "coc-elixir", "coc-docker", "https://github.com/xabikos/vscode-javascript", "coc-svelte"]
+" set leader key to \
+let mapleader="\\"
+
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-highlight',
+      \ 'coc-emmet',
+      \ 'coc-snippets',
+      \ 'coc-git',
+      \ 'coc-prettier',
+      \ 'https://github.com/xabikos/vscode-react',
+      \ 'https://github.com/skyran1279/js-jsx-snippets',
+      \ 'https://github.com/nathanchapman/vscode-javascript-snippets',
+      \ 'https://github.com/florinpatrascu/vscode-elixir-snippets',
+      \ 'coc-elixir',
+      \ 'coc-docker',
+      \ 'https://github.com/xabikos/vscode-javascript',
+      \ 'coc-svelte', ]
+
+" Fails to load sometimes. mapping to install
 map <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
+
+" ************************
+
 
 " Basic Settings
 filetype plugin indent on
@@ -227,8 +260,8 @@ colorscheme dracula
 highlight Normal ctermbg=None
 
 " Ariake Dark
-" colorscheme Ariake-Dark
-" Linux
+" " colorscheme Ariake-Dark
+" " Linux
 " colorscheme ariake-dark
 " set background=dark
 " highlight clear SignColumn
@@ -255,10 +288,49 @@ highlight Normal ctermbg=None
 " highlight clear SignColumn
 " highlight clear LineNr
 
-" TODO: hack work around for css highlighting.  use Ctrl h, and then run Ctrl v. fixes
+" hack work around for css highlighting.  use Ctrl h, and then run Ctrl v. fixes
 " highlighting and reverts colors back to how they should be
 nnoremap <C-h :syntax on <cr>
 nnoremap <C-v> :source ~/.config/nvim/init.vim <cr>
+
+" Startify Config ---
+nnoremap <leader>s :Startify<cr>
+nnoremap <leader>ss :SSave<cr>
+nnoremap <leader>sl :SLoad<cr>
+nnoremap <leader>sd :SDelete<cr>
+
+let g:startify_session_dir = '~/.config/nvim/session'
+let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   Files']            },
+          \ { 'type': 'dir',       'header': ['   Project Dir '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+
+let g:startify_bookmarks = [ {'n': '~/.config/nvim/init.vim'}, {'v': '~/.vimrc'}, {'z': '~/.zshrc'}, {'d': '~/dotfiles'} ]
+
+let g:startify_update_oldfiles = 1
+let g:startify_session_autoload = 1
+let g:startify_session_persistence = 1
+let g:startify_session_delete_buffers = 1
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_fortune_use_unicode = 1
+
+let g:webdevicons_enable_startify = 1
+let g:startify_custom_header = [
+            \"   d8,       d8b",
+            \"  `8P        88P",
+            \"            d88",
+            \"  d88   d888888  ?88,.d88b,'",
+            \"  ?88  d8P' ?88  `?88'  ?88",
+            \"   88b 88b  ,88b   88b  d8P",
+            \"   `88b`?88P'`88b  888888P''",
+            \"    )88            88P''",
+            \"   ,88P           d88",
+            \"`?888P            ?8P",
+            \ ]
 
 "Polyglot enable syntax
 let g:javascript_plugin_jsdoc = 1
@@ -266,7 +338,7 @@ let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
 " Line Numbers
-set number
+set relativenumber
 
 function! LineNumberToggle()
   if(&relativenumber == 1)
@@ -298,12 +370,8 @@ set visualbell
 "set t_vb=
 "set tm=500
 
-"TODO: clear results after search space ctrl l
+" clear results after search space ctrl l
 nnoremap <C-L> :noh<CR><C-L>
-
-
-" set leader key to \
-let mapleader="\\"
 
 "re-map esc to jk
 inoremap jk <esc>
@@ -475,7 +543,7 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 " FZF Settings
 " TODO: set rtp+=/usr/local/opt/fzf
 " set rtp+=/home/jonathan/.config/nvim/plugged
-set rtp+=~/.config/nvim/init.vim
+" set rtp+=~/.config/nvim/init.vim
 " set rtp+=/home/jonathan/dotfiles/neovim/.config/nvim/init.vim
 " customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -507,8 +575,6 @@ nnoremap <Leader>t :Tags<CR>
 " TODO: map to call up jump list
 " nnoremap <leader>ju :ju<CR>
 
-" set tags=tags
-
 " set leaderf to open FZF
 nmap <Leader>f :FZF<CR>
 let g:fzf_action = {
@@ -517,6 +583,25 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit'
   \}
 
+" map to call up jump list
+" nnoremap <leader>ju :ju<CR>
+function! GotoJump()
+  jumps
+  let j = input("Please select your jump: ")
+  if j != ''
+    let pattern = '\v\c^\+'
+    if j =~ pattern
+      let j = substitute(j, pattern, '', 'g')
+      execute "normal " . j . "\<c-i>"
+    else
+      execute "normal " . j . "\<c-o>"
+    endif
+  endif
+endfunction
+
+nmap <Leader>j :call GotoJump()<CR>
+
+" set tags=tags
 
 " USEFUL FOR POPULATING QUICKFIX WINDOW
 let g:ackprg = 'rg --vimgrep --no-heading'
@@ -534,7 +619,7 @@ let g:vcoolor_map = '<leader>c'
 
 
 " Line Movement
-move lines up or dowwn
+" move lines up or dowwn
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 inoremap <C-j> <Esc>:m .+1<CR>==gi
@@ -553,18 +638,18 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " PYTHON SETTINGS
 " PEP 8 indentation here
-"au BufNewFile,BufRead *.py
-    "\ set tabstop=4
-    "\ set softtabstop=4
-    "\ set shiftwidth=4
-    "\ set textwidth=79
-    "\ set expandtab
-    "\ set autoindent
-    "\ set fileformat=unix
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 textwidth=79
-"autocmd FileType puthon setlocal expandtab autoindent fileformat=unix
+autocmd FileType puthon setlocal expandtab autoindent fileformat=unix
 "Flag unnecessary WhiteSpace
-"au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " UTF-8 Support
@@ -574,6 +659,7 @@ set encoding=utf-8
 map <F8> :!gcc % -Wall -Wextra -o %< && ./%< <CR>
 
 
+" Not Needed for Nvim
 "matchit.vim
 " :filetype plugin on
 " packadd! matchit
@@ -587,7 +673,6 @@ let g:vista_fzf_preview = ['right:50%']
 map <leader>v :Vista!!<CR>
 map <leader>vc :Vista coc<CR>
 map <leader>vf :Vista finder coc<CR>
-
 
 " Coc Settings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -605,7 +690,11 @@ set updatetime=300
 set shortmess+=c
 
 " always show signcolumns
-set signcolumn=yes
+if has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -620,6 +709,13 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " Use <c-space> to trigger completion.
@@ -627,7 +723,11 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
