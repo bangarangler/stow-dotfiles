@@ -337,6 +337,9 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
+" Fast Substitution
+nnoremap S :%s///gc<Left><Left><Left><Left>
+
 " Line Numbers
 set relativenumber
 
