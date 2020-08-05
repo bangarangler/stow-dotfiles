@@ -108,8 +108,8 @@ Plug 'jparise/vim-graphql'
 " Python ---
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'nvie/vim-flake8'
-Plug 'davidhalter/jedi-vim'
+" Plug 'nvie/vim-flake8'
+" Plug 'davidhalter/jedi-vim'
 
 " Docker ---
 Plug 'ekalinin/dockerfile.vim'
@@ -641,7 +641,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " PYTHON SETTINGS
 " PEP 8 indentation here
-au BufNewFile,BufRead *.py
+au BufNewFile, BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
@@ -650,9 +650,9 @@ au BufNewFile,BufRead *.py
     \ set autoindent
     \ set fileformat=unix
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 textwidth=79
-autocmd FileType puthon setlocal expandtab autoindent fileformat=unix
+autocmd FileType python setlocal expandtab autoindent fileformat=unix
 "Flag unnecessary WhiteSpace
-au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " UTF-8 Support

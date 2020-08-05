@@ -115,9 +115,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -179,3 +179,14 @@ load-nvmrc
 #export VISUAL="/usr/bin/nvim"
 fpath=($fpath "/home/jonathan/.zfunctions")
 fpath=($fpath "/home/jonathan/.zfunctions")
+
+# PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# allow pyenv-virtualenv to automatically activate a virtual environment if it
+# has been set up to do so.
+eval "$(pyenv virtualenv-init -)"

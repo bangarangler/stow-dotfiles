@@ -82,6 +82,7 @@ Xcursor.size:                     0
 URxvt.font: xft:Inconsolata Nerd Font Mono:style=Medium:italic:size=14:minspace=false, xft:DejaVu sans:pixelsize=18
 !URxvt*letterSpace: 0
 !URxvt.font: xft:Inconsolata Nerd Font:style=Medium:italic:size=14
+! URxvt.letterSpace: 1
 !URxvt.letterSpace: -1
 !Urxvt -fn 'xft:Noto Emoji'
 
