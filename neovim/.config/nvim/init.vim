@@ -187,7 +187,9 @@ let g:coc_global_extensions = [
 map <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
 
 " ************************
-
+" TODO: fix nvim working inside python project
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python'
 
 " Basic Settings
 filetype plugin indent on
