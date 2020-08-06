@@ -179,7 +179,9 @@ let g:coc_global_extensions = [
       \ 'coc-elixir',
       \ 'coc-docker',
       \ 'https://github.com/xabikos/vscode-javascript',
-      \ 'coc-svelte', ]
+      \ 'coc-svelte',
+      \ 'coc-python',
+      \ 'coc-pyright', ]
 
 " Fails to load sometimes. mapping to install
 map <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
