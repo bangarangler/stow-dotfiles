@@ -151,12 +151,13 @@ function stowrestore() {
   ../dotfiles/stowrestore
 }
 
+# export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fpath=($fpath "/home/jonathan/.zfunctions")
 fpath=($fpath "/home/jonathan/.zfunctions")
 
-export FZF_Default_Command='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook
