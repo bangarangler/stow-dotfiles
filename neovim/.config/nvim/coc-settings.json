@@ -36,7 +36,6 @@
 
   "suggest.floatEnable": false,
   "suggest.timeout": 5000,
-  "suggest.maxCompleteItemCount": 3,
   "suggest.localityBonus": true,
   "diagnostic.infoSign": "ღ",
   "diagnostic.hintSign": "ஐ",
