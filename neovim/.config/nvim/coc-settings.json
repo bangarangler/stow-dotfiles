@@ -73,5 +73,8 @@
   },
   "suggest.echodocSupport": true,
   "signature.enable": true,
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false
 }

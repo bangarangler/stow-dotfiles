@@ -181,10 +181,51 @@ let g:coc_global_extensions = [
       \ 'https://github.com/xabikos/vscode-javascript',
       \ 'coc-svelte',
       \ 'coc-python',
-      \ 'coc-pyright', ]
+      \ 'coc-pyright',
+      \ 'coc-explorer',]
 
 " Fails to load sometimes. mapping to install
 map <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<CR>
+
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\     'root-uri': '~/.vim',
+\   },
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 30,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 30,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+
+" nmap <leader>ed :CocCommand explorer --preset .vim<CR>
+" nmap <leader>ef :CocCommand explorer --preset floating<CR>
+nmap <leader>n :CocCommand explorer --preset .vim<CR>
+nmap <leader>nf :CocCommand explorer --preset floating<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " ************************
 " TODO: fix nvim working inside python project
@@ -305,12 +346,12 @@ nnoremap <leader>sd :SDelete<cr>
 
 let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   Files']            },
-          \ { 'type': 'dir',       'header': ['   Project Dir '. getcwd()] },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'commands',  'header': ['   Commands']       },
-          \ ]
+        \ { 'type': 'files',     'header': ['   Files']            },
+        \ { 'type': 'dir',       'header': ['   Project Dir '. getcwd()] },
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+        \ { 'type': 'commands',  'header': ['   Commands']       },
+        \ ]
 
 let g:startify_bookmarks = [ {'n': '~/.config/nvim/init.vim'}, {'v': '~/.vimrc'}, {'z': '~/.zshrc'}, {'d': '~/dotfiles'} ]
 
@@ -324,17 +365,17 @@ let g:startify_fortune_use_unicode = 1
 
 let g:webdevicons_enable_startify = 1
 let g:startify_custom_header = [
-            \"   d8,       d8b",
-            \"  `8P        88P",
-            \"            d88",
-            \"  d88   d888888  ?88,.d88b,'",
-            \"  ?88  d8P' ?88  `?88'  ?88",
-            \"   88b 88b  ,88b   88b  d8P",
-            \"   `88b`?88P'`88b  888888P''",
-            \"    )88            88P''",
-            \"   ,88P           d88",
-            \"`?888P            ?8P",
-            \ ]
+          \"   d8,       d8b",
+          \"  `8P        88P",
+          \"            d88",
+          \"  d88   d888888  ?88,.d88b,'",
+          \"  ?88  d8P' ?88  `?88'  ?88",
+          \"   88b 88b  ,88b   88b  d8P",
+          \"   `88b`?88P'`88b  888888P''",
+          \"    )88            88P''",
+          \"   ,88P           d88",
+          \"`?888P            ?8P",
+          \ ]
 
 "Polyglot enable syntax
 let g:javascript_plugin_jsdoc = 1
@@ -348,11 +389,11 @@ nnoremap S :%s///gc<Left><Left><Left><Left>
 set relativenumber
 
 function! LineNumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
+if(&relativenumber == 1)
+  set norelativenumber
+else
+  set relativenumber
+endif
 endfunc
 
 " Leader nt toggles relative/number
@@ -436,7 +477,7 @@ nnoremap <leader>gm :Merginal<CR>
 
 " NERDTree Settings
 "NERDTree toggle
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " Indent Guide Plugin Settings
 "<Leader>ig "toggles indent guides
@@ -574,7 +615,7 @@ let g:fzf_buffers_jump = 1
 " TODO: nmap <Leader>b :buffers<CR>
 "FZF :Buffers
 nmap <Leader>b :Buffers<CR>
-nmap <Leader>n :files<CR>
+" nmap <Leader>n :files<CR>
 nmap <Leader>m :bufdo! bw<CR>
 nmap <Leader>ju :jumps<CR>
 nnoremap <Leader>t :Tags<CR>
