@@ -8,6 +8,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'idanarye/vim-merginal'
+Plug 'jreybert/vimagit'
 
 " FZF ---
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -90,7 +91,8 @@ Plug 'valloric/matchtagalways'
 Plug 'pablopunk/dynamic-file-completion.vim'
 
 " ranger for nvim
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+" Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+Plug 'kevinhwang91/rnvimr'
 
 "ranger for vim
 " Plug 'francoiscabrol/ranger.vim'
@@ -266,18 +268,24 @@ set foldlevel=1
 " map to fold
 nnoremap <space> za
 
+" Nvim Terminal Mappings ---
+if has('nvim')
+  tnoremap jk <C-\><C-n>
+  tnoremap <C-v><Esc> <Esc>
+endif
+
 " Color Scheme
-let g:dracula_italic = 0
-colorscheme dracula
-highlight Normal ctermbg=None
+" let g:dracula_italic = 0
+" colorscheme dracula
+" highlight Normal ctermbg=None
 
 " Ariake Dark
-" " colorscheme Ariake-Dark
-" " Linux
-" colorscheme ariake-dark
-" set background=dark
-" highlight clear SignColumn
-" highlight clear LineNr
+" colorscheme Ariake-Dark Linux
+colorscheme ariake-dark
+set background=dark
+highlight clear SignColumn
+highlight clear LineNr
+hi Normal ctermbg=NONE guibg=NONE
 
 " OneDark
 " colorscheme onedark
@@ -302,7 +310,7 @@ highlight Normal ctermbg=None
 
 " hack work around for css highlighting.  use Ctrl h, and then run Ctrl v. fixes
 " highlighting and reverts colors back to how they should be
-nnoremap <C-h :syntax on <cr>
+nnoremap <C-h> :syntax on <cr>
 nnoremap <C-v> :source ~/.config/nvim/init.vim <cr>
 
 " Startify Config ---
@@ -379,7 +387,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['e'] = [ ':CocCommand explorer --preset floating'       , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
+let g:which_key_map['r'] = [ ':RnvimrToggle'                    , 'ranger' ]
 let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
 let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
@@ -441,6 +449,9 @@ let g:which_key_map.t = {
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
       \ }
+
+" vimagit settings ---
+nnoremap <leader>g :Magit<CR>
 
 " Fast Substitution
 nnoremap S :%s///gc<Left><Left><Left><Left>
