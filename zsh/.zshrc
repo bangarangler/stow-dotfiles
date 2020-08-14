@@ -146,6 +146,8 @@ alias fuck="sudo !!"
 
 alias dpcode="code && devilspie"
 
+alias bat="batcat"
+
 function stowrestore() {
   ~/dotfiles/
   ../dotfiles/stowrestore
