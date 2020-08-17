@@ -199,8 +199,10 @@ map <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<
 " ************************
 " TODO: fix nvim working inside python project
 if has("nvim")
-  let g:python3_host_prog = '/home/jonathan/.pyenv/versions/neovim3/bin'
-  let g:python_host_prog = '/home/jonathan/.pyenv/versions/neovim2/bin'
+  " let g:python3_host_prog = '/home/jonathan/.pyenv/versions/neovim3/bin'
+  " let g:python_host_prog = '/home/jonathan/.pyenv/versions/neovim2/bin'
+  let g:python3_host_prog = '/home/jonathan/.pyenv/versions/neovim3/lib/python3.8/site-packages'
+  let g:python_host_prog = '/home/jonathan/.pyenv/versions/neovim2/lib/python2.7/site-packages'
   let g:python3_host_prog = '/home/jonathan/.pyenv/versions/neovim3/bin/python'
   let g:python_host_prog = '/home/jonathan/.pyenv/versions/neovim2/bin/python'
 
