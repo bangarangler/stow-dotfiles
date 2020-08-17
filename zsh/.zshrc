@@ -192,4 +192,5 @@ fi
 
 # allow pyenv-virtualenv to automatically activate a virtual environment if it
 # has been set up to do so.
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1

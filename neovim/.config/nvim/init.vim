@@ -198,8 +198,15 @@ map <leader><leader>cl :CocInstall https://github.com/xabikos/vscode-javascript<
 
 " ************************
 " TODO: fix nvim working inside python project
-let g:python3_host_prog = '/usr/bin/python3'
-let g:python_host_prog = '/usr/bin/python'
+if has("nvim")
+  let g:python3_host_prog = '/home/jonathan/.pyenv/versions/neovim3/bin'
+  let g:python_host_prog = '/home/jonathan/.pyenv/versions/neovim2/bin'
+  let g:python3_host_prog = '/home/jonathan/.pyenv/versions/neovim3/bin/python'
+  let g:python_host_prog = '/home/jonathan/.pyenv/versions/neovim2/bin/python'
+
+  " let g:python3_host_prog = '/usr/bin/python3'
+  " let g:python_host_prog = '/usr/bin/python'
+endif
 
 " Basic Settings
 filetype plugin indent on
@@ -285,7 +292,8 @@ colorscheme ariake-dark
 set background=dark
 highlight clear SignColumn
 highlight clear LineNr
-hi Normal ctermbg=NONE guibg=NONE
+highlight clear endOfBuffer
+" hi Normal ctermbg=NONE guibg=NONE
 
 " OneDark
 " colorscheme onedark
@@ -523,25 +531,15 @@ autocmd BufWritePre * StripWhitespace
 " refresh marks if out of sync
 nnoremap <leader>sr :SignatureRefresh<CR>
 
-" TODO: Settings vim-fugitive mappings
-" :Gdiff
-" nnoremap <leader>gd : Gdiffsplit!<CR>
-" " :diffget //2 file visually on the left
-" nnoremap gd2 :diffget //2<CR>
-" " :diffget //3 file visually on the right
-" nnoremap gd3 :diffget //3<CR>
-" " :diffupdate -- fix spacing after change
-" nnoremap gdu :diffupdate<CR>
 
-" fugitive mappings
-" :Gdiff
-nnoremap <leader>gd : Gdiff<CR>
-" :diffget //2 file visually on the left
-nnoremap gd2 :diffget //2<CR>
-" :diffget //3 file visually on the right
-nnoremap gd3 :diffget //3<CR>
-" :diffupdate -- fix spacing after change
-nnoremap gdu :diffupdate<CR>
+" TODO: Settings vim-fugitive mappings
+" Bring up 3 way split help docs with :help Gdiffsplit
+" this is a three-way diff against the "ours" and "theirs" ancestors.
+" Additional d2o and d3o maps are provided to obtain the hunk from the "ours"
+" or "theirs" ancestor, respectively. jump between hunks with c] and c[
+nnoremap <leader>gd : Gdiffsplit!<CR>
+" d2o pull in from file on left
+" d3o pull in from file on right
 
 " Merginal Settings
 " :Merginal plugin for branches
