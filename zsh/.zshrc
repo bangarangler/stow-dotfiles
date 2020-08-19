@@ -153,6 +153,12 @@ function stowrestore() {
   ../dotfiles/stowrestore
 }
 
+function startday() {
+  ~/dotfiles/
+  ../dotfiles/start_day.py
+  cd -
+}
+
 # export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
