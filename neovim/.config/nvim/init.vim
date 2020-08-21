@@ -9,6 +9,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'idanarye/vim-merginal'
 Plug 'jreybert/vimagit'
+" Testing ---***
+Plug 'stsewd/fzf-checkout.vim'
 
 " FZF ---
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -793,6 +795,14 @@ let g:vista_fzf_preview = ['right:50%']
 map <leader>v :Vista!!<CR>
 map <leader>vc :Vista coc<CR>
 map <leader>vf :Vista finder coc<CR>
+
+" fzf-checkout Settings ---
+" Press alt-enter to track a remote branch locally (origin/foo becomes foo)
+" Press ctrl-n to create a branch with the current query as name
+" Press ctrl-d to delete a branch
+let g:fzf_layout = {'window': {'width': 0.8, 'height': 0.8}}
+let $FZF_DEFAULT_OPTS='--reverse'
+nnoremap <leader>gc :GCheckout<CR>
 
 " Coc Settings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
