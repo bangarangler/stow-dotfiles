@@ -30,8 +30,10 @@ def are_you_ready():
         if cmd == "y":
             for url in work_urls[1:]:
                 webbrowser.open_new_tab(url)
-            subprocess.Popen(['slack', '&'])
-            subprocess.Popen(['mailspring', '&'])
+            # subprocess.Popen(['slack', '&'])
+            # subprocess.Popen(['mailspring', '&'])
+            subprocess.Popen(['/usr/bin/slack'])
+            subprocess.Popen(['/usr/bin/mailspring'])
             break
 
 
