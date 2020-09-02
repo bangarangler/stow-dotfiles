@@ -286,18 +286,18 @@ if has('nvim')
 endif
 
 " Color Scheme
-" let g:dracula_italic = 0
-" colorscheme dracula
-" highlight Normal ctermbg=None
+let g:dracula_italic = 0
+colorscheme dracula
+highlight Normal ctermbg=None
 
 " Ariake Dark
 " colorscheme Ariake-Dark Linux
-colorscheme ariake-dark
-set background=dark
-highlight clear SignColumn
-highlight clear LineNr
-highlight clear endOfBuffer
-hi Normal ctermbg=NONE guibg=NONE
+" colorscheme ariake-dark
+" set background=dark
+" highlight clear SignColumn
+" highlight clear LineNr
+" highlight clear endOfBuffer
+" hi Normal ctermbg=NONE guibg=NONE
 
 " OneDark
 " colorscheme onedark
