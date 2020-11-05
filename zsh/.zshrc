@@ -141,6 +141,8 @@ alias dfiles="tmuxinator df"
 
 alias pcstatus="tmuxinator pcstatus"
 
+alias workProd="tmuxinator workProd"
+
 alias update="sudo apt update && sudo apt upgrade"
 
 alias fuck="sudo !!"
