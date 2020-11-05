@@ -105,6 +105,7 @@ SPACESHIP_DIR_TRUNC='1' # show only last directory
 plugins=(zsh-nvm git z fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+source /home/jonathan/dotfiles/zsh/.env
 
 # User configuration
 
@@ -147,6 +148,17 @@ alias fuck="sudo !!"
 alias dpcode="code && devilspie"
 
 alias bat="batcat"
+
+# WORK
+alias prod="sshpass -p ${PROD_PW} ssh ${PROD_USER}"
+alias peg="sshpass -p ${PEGASUS_PW} ssh ${PEGASUS_USER}"
+alias cerb="sshpass -p ${CERBERUS_PW} ssh ${CERBERUS_USER}"
+alias nrt="sshpass -p ${NRT_PW} ssh ${NRT_USER}"
+alias hyd="sshpass -p ${HYDRA_PW} ssh ${HYDRA_USER}"
+alias ods="sshpass -p ${ORION_DEV_PW} ssh ${ORION_DEV_USER}"
+alias v1s="sshpass -p ${V1_PW} ssh ${V1_USER}"
+alias aris="sshpass -p ${ARIS_PW} ssh ${ARIS_USER}"
+alias nowwp="sshpass -p ${NOW_WP_PW} ssh ${NOW_WP_USER}"
 
 function stowrestore() {
   ~/dotfiles/

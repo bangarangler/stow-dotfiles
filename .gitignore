@@ -1,1 +1,3 @@
 /neovim/.config/nvim/plugged
+/zsh/.env
+.env
