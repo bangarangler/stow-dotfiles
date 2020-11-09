@@ -9,7 +9,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'idanarye/vim-merginal'
 Plug 'jreybert/vimagit'
-" Testing ---***
 Plug 'stsewd/fzf-checkout.vim'
 
 " FZF ---
@@ -118,6 +117,7 @@ Plug 'jparise/vim-graphql'
 " Python ---
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'psf/black', { 'branch': 'stable' }
 " Plug 'nvie/vim-flake8'
 " Plug 'davidhalter/jedi-vim'
 
@@ -130,6 +130,12 @@ Plug 'ekalinin/dockerfile.vim'
 " Startify ---
 Plug 'mhinz/vim-startify'
 
+" Visual Improvments ---
+Plug 'ryanoasis/vim-devicons'
+
+" Vimspector
+" Plug 'puremourning/vimspector', {'do': './install_gadget.py'}
+Plug 'puremourning/vimspector'
 
 " Testing / No longer used"
 "Plug 'ludovicchabant/vim-gutentags'
@@ -697,13 +703,6 @@ nnoremap <Leader>t :Tags<CR>
 " TODO: map to call up jump list
 " nnoremap <leader>ju :ju<CR>
 
-" set leaderf to open FZF
-nmap <Leader>f :FZF<CR>
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
 
 " map to call up jump list
 " nnoremap <leader>ju :ju<CR>
@@ -725,6 +724,14 @@ nmap <Leader>j :call GotoJump()<CR>
 
 " set tags=tags
 
+" set leaderf to open FZF
+nmap <Leader>f :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
+
 " USEFUL FOR POPULATING QUICKFIX WINDOW
 let g:ackprg = 'rg --vimgrep --no-heading'
 " EXAMPLE USAGE
@@ -738,6 +745,22 @@ set grepformat^=%f:%l:%c:%m
 let g:vcoolor_lowercase = 1
 let g:vcoolor_disable_mappings = 1
 let g:vcoolor_map = '<leader>c'
+
+" Debugger Mappings
+nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+
+nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
+
+nmap <leader>dl <Plug>VimspectorStepInto
+nmap <leader>dj <Plug>VimspectorStepOver
+nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>d_ <Plug>VimspectorRestart
+nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+
+nmap <leader>drc <Plug>VimspectorRunToCursor
+nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
 
 " Line Movement
@@ -770,6 +793,12 @@ au BufNewFile, BufRead *.py
     \ set fileformat=unix
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 textwidth=79
 autocmd FileType python setlocal expandtab autoindent fileformat=unix
+autocmd BufWritePre *.py execute ':Black'
+let g:black_fast = 0 "(defaults to 0)
+let g:black_linelength = 79 "(defaults to 88)
+let g:black_skip_string_normalization = 0 "(defaults to 0)
+" let g:black_virtualenv = ~/ "(defaults to ~/.vim/black or ~/.local/share/nvim/black)
+"Flag unnecessary WhiteSpace
 "Flag unnecessary WhiteSpace
 " au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -802,7 +831,7 @@ map <leader>vf :Vista finder coc<CR>
 " Press ctrl-d to delete a branch
 let g:fzf_layout = {'window': {'width': 0.8, 'height': 0.8}}
 let $FZF_DEFAULT_OPTS='--reverse'
-nnoremap <leader>gc :GCheckout<CR>
+nnoremap <leader>gc :GBranches<CR>
 
 " Coc Settings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
