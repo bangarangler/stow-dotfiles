@@ -197,6 +197,7 @@ let g:coc_global_extensions = [
       \ 'https://github.com/xabikos/vscode-javascript',
       \ 'coc-svelte',
       \ 'coc-graphql',
+      \ 'coc-yaml',
       \ 'coc-python',
       \ 'coc-pyright',
       \ 'coc-explorer',]
@@ -564,6 +565,12 @@ nnoremap <leader>gm :Merginal<CR>
 "<Leader>ig "toggles indent guides
 nnoremap <leader>ig :IndentGuidesToggle<CR>
 
+" Vim-Plug ---
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pc :PlugClean<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
+nnoremap <leader>puu :PlugUpgrade<CR>
+
 " Ranger nvim Config ---
 " Make Ranger replace netrw and be the file explorer
 let g:rnvimr_ex_enable = 1
@@ -835,6 +842,7 @@ let $FZF_DEFAULT_OPTS='--reverse'
 nnoremap <leader>gc :GBranches<CR>
 
 " Coc Settings
+nnoremap <leader>cu :CocUpdate<CR>
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 vmap <leader>p <Plug>(coc-format-selected)

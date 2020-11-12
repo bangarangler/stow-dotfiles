@@ -75,6 +75,15 @@
   "signature.enable": true,
   "python.jediEnabled": false,
   "explorer.width": 30,
+  "graphql.debug": false,
+  "graphql.filetypes": [
+    "graphql",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "reason"
+  ],
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false
 }
