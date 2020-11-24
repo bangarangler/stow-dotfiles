@@ -151,6 +151,22 @@ alias dpcode="code && devilspie"
 
 alias bat="batcat"
 
+alias pg_status="sudo service postgresql status"
+
+alias pg_start="sudo service postgresql start"
+
+alias pg_stop="sudo service postgresql stop"
+
+alias pg_restart="sudo service postgresql restart"
+
+alias redis_status="sudo systemctl status redis"
+
+alias redis_restart="sudo systemctl restart redis.service"
+
+alias redis_start="sudo systemctl start redis"
+
+alias redis_stop="sudo systemctl stop redis"
+
 # WORK
 alias prod="sshpass -p ${PROD_PW} ssh ${PROD_USER}"
 alias peg="sshpass -p ${PEGASUS_PW} ssh ${PEGASUS_USER}"
