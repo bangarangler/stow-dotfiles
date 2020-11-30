@@ -177,6 +177,7 @@ alias ods="sshpass -p ${ORION_DEV_PW} ssh ${ORION_DEV_USER}"
 alias v1s="sshpass -p ${V1_PW} ssh ${V1_USER}"
 alias aris="sshpass -p ${ARIS_PW} ssh ${ARIS_USER}"
 alias nowwp="sshpass -p ${NOW_WP_PW} ssh ${NOW_WP_USER}"
+alias mav="sshpass -p ${MAVERICK_PW} ssh ${MAVERICK_USER}"
 
 function stowrestore() {
   ~/dotfiles/
