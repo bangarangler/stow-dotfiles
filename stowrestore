@@ -9,4 +9,5 @@ stow tmux
 stow compton
 stow vim
 stow tmuxinator
+stow datagrip
 echo "We are done restoring dotfiles!"

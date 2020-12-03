@@ -149,6 +149,8 @@ alias fuck="sudo !!"
 
 alias dpcode="code && devilspie"
 
+alias dpInsiders="code-insiders && devilspie"
+
 alias bat="batcat"
 
 alias pg_status="sudo service postgresql status"
