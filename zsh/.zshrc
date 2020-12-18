@@ -169,6 +169,12 @@ alias redis_start="sudo systemctl start redis"
 
 alias redis_stop="sudo systemctl stop redis"
 
+alias docker_start="sudo systemctl start docker"
+
+alias docker_status="sudo systemctl status docker"
+
+alias docker_stop="sudo systemctl stop docker"
+
 # WORK
 alias prod="sshpass -p ${PROD_PW} ssh ${PROD_USER}"
 alias peg="sshpass -p ${PEGASUS_PW} ssh ${PEGASUS_USER}"
