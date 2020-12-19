@@ -10,7 +10,7 @@
 # to the user's home directory starting with `~/`.
 import:
 #  - /path/to/alacritty.yml
-   - /home/jonathan/dotfiles/alacritty/.config/alacritty/alacritty-master/dracula.yml
+   - /home/jonathan/dotfiles/alacritty/.config/alacritty/dracula.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables

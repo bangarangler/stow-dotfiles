@@ -2,3 +2,4 @@
 /zsh/.env
 .env
 /alacritty/.config/alacritty/alacritty-master
+/alacritty/.config/alacritty/dracula.yml
