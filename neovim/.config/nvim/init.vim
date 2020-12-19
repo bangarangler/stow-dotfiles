@@ -310,9 +310,10 @@ if has('nvim')
 endif
 
 " Color Scheme
-let g:dracula_italic = 1
+let g:dracula_italic = 0
 colorscheme dracula
 highlight Normal ctermbg=None
+" this line is for debugging italic in nvim not needed
 " highlight Comment cterm=italic
 
 " Ariake Dark
