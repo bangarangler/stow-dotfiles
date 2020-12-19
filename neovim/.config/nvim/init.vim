@@ -310,9 +310,10 @@ if has('nvim')
 endif
 
 " Color Scheme
-let g:dracula_italic = 0
+let g:dracula_italic = 1
 colorscheme dracula
 highlight Normal ctermbg=None
+" highlight Comment cterm=italic
 
 " Ariake Dark
 " colorscheme Ariake-Dark Linux

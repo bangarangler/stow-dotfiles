@@ -10,4 +10,5 @@ stow compton
 stow vim
 stow tmuxinator
 stow datagrip
+stow alacritty
 echo "We are done restoring dotfiles!"

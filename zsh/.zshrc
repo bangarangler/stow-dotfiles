@@ -239,3 +239,5 @@ fi
 # has been set up to do so.
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# export TERM=alacritty
+export TERM=xterm-256color-italic
