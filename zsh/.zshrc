@@ -133,47 +133,50 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# TMUXINATOR ALIASES
 alias workFE="tmuxinator workFE"
-
 alias workBE="tmuxinator workBE"
-
 alias dfiles="tmuxinator df"
-
 alias pcstatus="tmuxinator pcstatus"
-
 alias workProd="tmuxinator workProd"
 
+# SYSTEM ALIASES LINUX
 alias update="sudo apt update && sudo apt upgrade"
-
 alias fuck="sudo !!"
-
 alias dpcode="code && devilspie"
-
 alias dpInsiders="code-insiders && devilspie"
-
 alias bat="batcat"
+alias c="clear"
 
+# POSTGRES ALIASES
 alias pg_status="sudo service postgresql status"
-
 alias pg_start="sudo service postgresql start"
-
 alias pg_stop="sudo service postgresql stop"
-
 alias pg_restart="sudo service postgresql restart"
 
+# REDIS ALIASES
 alias redis_status="sudo systemctl status redis"
-
 alias redis_restart="sudo systemctl restart redis.service"
-
 alias redis_start="sudo systemctl start redis"
-
 alias redis_stop="sudo systemctl stop redis"
 
+# DOCKER ALIASES
 alias docker_start="sudo systemctl start docker"
-
 alias docker_status="sudo systemctl status docker"
-
 alias docker_stop="sudo systemctl stop docker"
+
+# TMUX
+alias t="tmux"
+# Attach to any (i don't care once inside can got to any with prefix+w)
+alias taa="t a"
+# Attach to named session (ta df) will attach to dotfiles
+alias ta="t a -t"
+# Short cut for tmux new -s <session-name>
+alias tn="t new -s"
+# Short cut for tmux kill-session
+alias tk="t kill-session"
+# Short cut for tmux kill-server
+alias tka="t kill-server"
 
 # WORK
 alias prod="sshpass -p ${PROD_PW} ssh ${PROD_USER}"

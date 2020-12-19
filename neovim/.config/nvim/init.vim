@@ -139,7 +139,7 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'ekalinin/dockerfile.vim'
 
 " Tmux Navigation
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Startify ---
 Plug 'mhinz/vim-startify'
@@ -529,7 +529,8 @@ set visualbell
 "set tm=500
 
 " clear results after search space ctrl l
-nnoremap <C-L> :noh<CR><C-L>
+" nnoremap <C-L> :noh<CR><C-L>
+nnoremap <leader>l :noh<CR><C-L>
 
 "re-map esc to jk
 inoremap jk <esc>
@@ -791,12 +792,12 @@ nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
 " Line Movement
 " move lines up or dowwn
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '>-1<CR>gv=gv
+" nnoremap <C-j> :m .+1<CR>==
+" nnoremap <C-k> :m .-2<CR>==
+" inoremap <C-j> <Esc>:m .+1<CR>==gi
+" inoremap <C-k> <Esc>:m .-2<CR>==gi
+" vnoremap <C-j> :m '>+1<CR>gv=gv
+" vnoremap <C-k> :m '>-1<CR>gv=gv
 
 " Quick Scope
 " Trigger a highlight in the appropriate direction when pressing these keys:
