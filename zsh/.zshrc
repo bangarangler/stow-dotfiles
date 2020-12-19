@@ -142,7 +142,8 @@ alias workProd="tmuxinator workProd"
 
 # SYSTEM ALIASES LINUX
 alias update="sudo apt update && sudo apt upgrade"
-alias fuck="sudo !!"
+alias fuck='sudo $(fc -ln -1)'
+# alias fuck="sudo !!"
 alias dpcode="code && devilspie"
 alias dpInsiders="code-insiders && devilspie"
 alias bat="batcat"
