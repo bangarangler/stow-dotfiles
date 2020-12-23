@@ -162,9 +162,18 @@ alias redis_start="sudo systemctl start redis"
 alias redis_stop="sudo systemctl stop redis"
 
 # DOCKER ALIASES
+alias d="docker"
 alias docker_start="sudo systemctl start docker"
 alias docker_status="sudo systemctl status docker"
 alias docker_stop="sudo systemctl stop docker"
+alias dcu="docker-compose up"
+alias dcud="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dps="d ps"
+alias dpsa="d ps -a"
+alias dils="d image ls"
+alias dcls="d container ls"
+alias dl="d logs"
 
 # TMUX
 alias t="tmux"
