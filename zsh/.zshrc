@@ -179,6 +179,11 @@ alias dils="d image ls"
 alias dcls="d container ls"
 alias dl="d logs"
 
+# KUBERNETES ALIASES
+alias kgp="kubectl get pods"
+alias kgd="kubectl get deployments"
+alias kgs="kubectl get services"
+
 # TMUX
 alias t="tmux"
 # Attach to any (i don't care once inside can got to any with prefix+w)
