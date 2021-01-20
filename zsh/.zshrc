@@ -21,6 +21,7 @@ SPACESHIP_PROMPT_ORDER=(
   git
   node
   ruby
+  # kubectl
   xcode
   swift
   golang
@@ -43,6 +44,17 @@ SPACESHIP_HOST_SUFFIX=") "
 # DIR
 SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
 SPACESHIP_DIR_TRUNC='1' # show only last directory
+
+#KUBERNETES
+# SPACESHIP_KUBECTL_SHOW=true
+# SPACESHIP_KUBECTL_SYMBOL
+# SPACESHIP_KUBECTL_VERSION_SHOW=false
+# SPACESHIP_KUBECTL_VERSION_PREFIX
+# SPACESHIP_KUBECONTEXT_SHOW=true
+# SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW=true
+# SPACESHIP_KUBECTL_SHOW=true
+# SPACESHIP_KUBECTL_VERSION_SHOW=false
+# SPACESHIP_KUBECONTEXT_SHOW=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -102,7 +114,7 @@ SPACESHIP_DIR_TRUNC='1' # show only last directory
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-nvm git z fzf zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(zsh-nvm git z kubectl fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source /home/jonathan/dotfiles/zsh/.env
@@ -188,6 +200,8 @@ alias kgpv="kubectl get pv"
 alias kgpvc="kubectl get pvc"
 alias kgcm="kubectl get configmap"
 alias kgns="kubectl get namespaces"
+alias kns="kubens"
+alias kctx="kubectx"
 
 # TMUX
 alias t="tmux"
@@ -268,3 +282,11 @@ eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # export TERM=alacritty
 export TERM=xterm-256color-italic
+
+# ASDF
+. $HOME/.asdf/asdf.sh
+
+# KUBECTL KUBECTX #KUBENS
+unset KUBECONFIG
+# source /usr/local/opt/kube-ps1/share/kube-ps1.sh
+# PROMPT='$(kube_ps1)'$PROMPT
