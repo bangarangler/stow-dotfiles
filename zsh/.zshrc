@@ -217,7 +217,7 @@ alias tk="t kill-session"
 alias tka="t kill-server"
 
 # WORK
-alias prod="sshpass -p ${PROD_PW} ssh ${PROD_USER}"
+alias zeus="sshpass -p ${ZEUS_PW} ssh ${ZEUS_USER}"
 alias peg="sshpass -p ${PEGASUS_PW} ssh ${PEGASUS_USER}"
 alias cerb="sshpass -p ${CERBERUS_PW} ssh ${CERBERUS_USER}"
 alias nrt="sshpass -p ${NRT_PW} ssh ${NRT_USER}"
