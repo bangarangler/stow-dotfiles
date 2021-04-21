@@ -261,7 +261,8 @@ load-nvmrc
 
 gline() {
 	cd /home/jonathan/Desktop/pluaris-prod
-	git log --shortstat --author $1 --since "10 years ago" --until "1 week ago" | grep "files changed" | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed", files, "lines inserted:", inserted, "lines deleted:", deleted}'
+	git log --shortstat --author $1 --since "10 years ago" --until "today" | grep "files changed" | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed", files, "lines inserted:", inserted, "lines deleted:", deleted}'
+  # git log --shortstat --author $1 --since "2021-1-1" --until "2021-4-1" | grep "files changed" | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed", files, "lines inserted:", inserted, "lines deleted:", deleted}'
 }
 
   # Set Spaceship ZSH as a prompt
