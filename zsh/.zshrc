@@ -295,3 +295,7 @@ export TERM=xterm-256color-italic
 unset KUBECONFIG
 # source /usr/local/opt/kube-ps1/share/kube-ps1.sh
 # PROMPT='$(kube_ps1)'$PROMPT
+
+# GO Linux
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
