@@ -199,6 +199,7 @@ let g:coc_global_extensions = [
       \ 'coc-css',
       \ 'coc-highlight',
       \ 'coc-emmet',
+      \ 'coc-go',
       \ 'coc-snippets',
       \ 'coc-git',
       \ 'coc-prettier',
