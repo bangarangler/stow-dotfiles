@@ -145,6 +145,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Fun ALIASES
+alias fish="/usr/local/bin/asciiquarium"
+
 # TMUXINATOR ALIASES
 alias workFE="tmuxinator workFE"
 alias workBE="tmuxinator workBE"
@@ -299,3 +302,4 @@ unset KUBECONFIG
 # GO Linux
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+export GO111MODULE=auto
