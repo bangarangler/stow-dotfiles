@@ -147,6 +147,10 @@ Plug 'mhinz/vim-startify'
 " Visual Improvments ---
 Plug 'ryanoasis/vim-devicons'
 
+" SQL ---
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+
 " Vimspector
 " Plug 'puremourning/vimspector', {'do': './install_gadget.py'}
 Plug 'puremourning/vimspector'
@@ -192,6 +196,10 @@ call plug#end()
 " set leader key to \
 let mapleader="\\"
 
+" SQL DEV
+source /home/jonathan/dotfiles/neovim/.config/nvim/hidden.vim
+map <leader><leader>db :DBUI<CR>
+
 let g:coc_global_extensions = [
       \ 'coc-json',
       \ 'coc-tsserver',
@@ -200,6 +208,8 @@ let g:coc_global_extensions = [
       \ 'coc-highlight',
       \ 'coc-emmet',
       \ 'coc-go',
+      \ 'coc-sql',
+      \ 'coc-db',
       \ 'coc-snippets',
       \ 'coc-git',
       \ 'coc-prettier',

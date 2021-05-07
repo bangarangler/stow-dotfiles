@@ -1,4 +1,5 @@
 /neovim/.config/nvim/plugged
+/neovim/.config/nvim/hidden.vim
 /zsh/.env
 .env
 /alacritty/.config/alacritty/alacritty-master
