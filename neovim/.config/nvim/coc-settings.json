@@ -86,4 +86,15 @@
   ],
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false
+  /* "languageserver": { */
+  /*   "golang": { */
+  /*     "command": "gopls", */
+  /*     "filetypes": ["go"], */
+  /*     "initializationOptions": { */
+  /*       "gocodeCompletionEnabled": true, */
+  /*       "diagnostic": true, */
+  /*       "linting": "golint" */
+  /*     } */
+  /*   } */
+  /* } */
 }

@@ -840,6 +840,11 @@ let g:black_skip_string_normalization = 0 "(defaults to 0)
 "Flag unnecessary WhiteSpace
 " au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+" GO SETTINGS
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
+autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
+autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 
 " UTF-8 Support
 set encoding=utf-8
