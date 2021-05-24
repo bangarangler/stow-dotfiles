@@ -118,6 +118,7 @@ Plug 'sheerun/vim-polyglot'
 
 " Svelte highlighting ---
 Plug 'evanleck/vim-svelte'
+let g:svelte_preprocessors = ['typescript']
 
 " CSS show colors ---
 Plug 'ap/vim-css-color'
