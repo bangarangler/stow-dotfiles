@@ -215,7 +215,7 @@ let g:coc_global_extensions = [
       \ 'coc-git',
       \ 'coc-prettier',
       \ 'https://github.com/xabikos/vscode-react',
-      \ 'https://github.com/skyran1279/js-jsx-snippets',
+      \ 'https://github.com/skyran1278/js-jsx-snippets',
       \ 'https://github.com/nathanchapman/vscode-javascript-snippets',
       \ 'https://github.com/florinpatrascu/vscode-elixir-snippets',
       \ 'coc-elixir',
