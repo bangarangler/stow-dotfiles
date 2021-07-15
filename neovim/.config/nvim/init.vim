@@ -28,7 +28,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " File Explorer ---
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 
 " Visual Improvments ---
 Plug 'ryanoasis/vim-devicons'
@@ -46,6 +46,7 @@ Plug 'kabbamine/vcoolor.vim'
 Plug 'ntpeters/vim-better-whitespace'
 
 " Motion Plugins ---
+" Plug 'phaazon/hop.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'kshenoy/vim-signature'
@@ -314,6 +315,23 @@ set foldlevel=1
 
 " map to fold
 nnoremap <space> za
+
+" nvim HOP
+" hop around by highlighting words.
+" nnoremap <leader><leader>hw :HopWord<CR>
+" hop around by matching against a pattern (as with /).
+" nnoremap <leader><leader>hp :HopPattern<CR>
+"type a single key and hop to any occurrence of that key in the document.
+" nnoremap <leader><leader>hc :HopChar1<CR>
+"type a bigram (two keys) and hop to any occurrence of that bigram in the document.
+" nnoremap <leader><leader>h2c :HopChar2<CR>
+"jump to any visible line in your buffer.
+" nnoremap <leader><leader>hl :HopLine<CR>
+" hi HopNextKey guifg=#ff79c6
+" hi HopNextKey1 guifg=#bd93f9
+" hi HopNextKey2 guifg=#50fa7b
+" require'hop'.setup()
+" lua require'hop'.setup {}
 
 " Nvim Terminal Mappings ---
 if has('nvim')
