@@ -239,6 +239,9 @@ alias mav="sshpass -p ${MAVERICK_PW} ssh ${MAVERICK_USER}"
 alias goose="sshpass -p ${GOOSE_PW} ssh ${GOOSE_USER}"
 alias merlin="sshpass -p ${MERLIN_PW} ssh ${MERLIN_USER}"
 
+# PERSONAL
+alias bang="sshpass -p ${BANGARANGLER_PW} ssh ${BANGARANGLER_USER}"
+
 function stowrestore() {
   ~/dotfiles/
   ../dotfiles/stowrestore
