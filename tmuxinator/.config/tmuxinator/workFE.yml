@@ -47,6 +47,8 @@ windows:
       panes:
         - nvim
   - shell | devServer:
+      layout: tiled
       panes:
-        - npm run dev
+        - mage -v fedev
         - ls
+        - mage -v bedev
